@@ -239,6 +239,19 @@
           </a>
         </li>
         <li>
+          <a href="#" class="nav-link link-body-emphasis">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8z" />
+              <path
+                d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2" />
+              <path
+                d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z" />
+            </svg>
+            Pactuação de metas
+          </a>
+        </li>
+        <li>
           <a href="#" class="nav-link active">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
               class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
@@ -251,34 +264,46 @@
             Plano de Ação
           </a>
         </li>
-        <li>
-          <a href="#" class="nav-link link-body-emphasis">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-bar-chart-line" viewBox="0 0 16 16">
-              <path
-                d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1zm1 12h2V2h-2zm-3 0V7H7v7zm-5 0v-3H2v3z" />
-            </svg>
-            Indicadores de Execução
-          </a>
+        <li class="mb-1"> <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+            data-bs-toggle="collapse" data-bs-target="#indicador_estruturante" aria-expanded="false">
+            Indicadores Estruturantes
+          </button>
+          <div class="collapse" id="indicador_estruturante">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Avaliações
+                  Externas</a>
+              </li>
+              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Frequência</a>
+              </li>
+              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Aulas dadas</a>
+              </li>
+            </ul>
+          </div>
         </li>
-        <li>
-          <a href="#" class="nav-link link-body-emphasis">
-            <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
-              <use xlink:href="#people-circle"></use>
-            </svg>
-            Visitas Técnicas
-          </a>
+        <li class="mb-1"> <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+            data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+            Ciclo de Gestão
+          </button>
+          <div class="collapse" id="dashboard-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Planejamento</a>
+              </li>
+              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Execução</a>
+              </li>
+              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">SAAR</a>
+              </li>
+              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Correção de
+                  Rotas</a>
+              </li>
+              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Compartilhamento de
+                  Práticas</a>
+              </li>
+              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Balanço Final</a>
+              </li>
+            </ul>
+          </div>
         </li>
-        <li>
-          <a href="#" class="nav-link link-body-emphasis">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-              class="bi bi-arrow-left-right" viewBox="0 0 16 16">
-              <path fill-rule="evenodd"
-                d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5" />
-            </svg>
-            Comunicação
-          </a>
-        </li>
+
         <li>
           <a href="#" class="nav-link link-body-emphasis">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -291,22 +316,12 @@
         </li>
         <li>
           <a href="#" class="nav-link link-body-emphasis">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trello"
-              viewBox="0 0 16 16">
-              <path
-                d="M14.1 0H1.903C.852 0 .002.85 0 1.9v12.19A1.9 1.9 0 0 0 1.902 16h12.199A1.9 1.9 0 0 0 16 14.09V1.9A1.9 1.9 0 0 0 14.1 0M7 11.367a.636.636 0 0 1-.64.633H3.593a.633.633 0 0 1-.63-.633V3.583c0-.348.281-.631.63-.633h2.765c.35.002.632.284.633.633zm6.052-3.5a.633.633 0 0 1-.64.633h-2.78A.636.636 0 0 1 9 7.867V3.583a.636.636 0 0 1 .633-.633h2.778c.35.002.631.285.631.633z" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5" />
             </svg>
-            SAAR
-          </a>
-        </li>
-        <li>
-          <a href="#" class="nav-link link-body-emphasis">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-display"
-              viewBox="0 0 16 16">
-              <path
-                d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4q0 1 .25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75Q6 13 6 12H2s-2 0-2-2zm1.398-.855a.76.76 0 0 0-.254.302A1.5 1.5 0 0 0 1 4.01V10c0 .325.078.502.145.602q.105.156.302.254a1.5 1.5 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.76.76 0 0 0 .254-.302 1.5 1.5 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.76.76 0 0 0-.302-.254A1.5 1.5 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145" />
-            </svg>
-            Acompanhamento de Processos
+            Comunicação
           </a>
         </li>
       </ul>
