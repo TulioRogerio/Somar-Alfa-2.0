@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestão de Aulas - Somar Alfa</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body class="bg-body-tertiary">
+
+  <div class="container my-4">
+
+    <!-- Bloco 1: Turmas -->
+    <div class="bg-white rounded-4 shadow-sm p-4 mb-4">
+      <h3 class="fw-bold mb-3">Turmas</h3>
+      <!-- Cadastro de Turma -->
+      <p>(Inserir uma caixa flutuante para cadastro de turma com essas informações da linha rosa)</p>
+      <form class="row g-2 mb-3 bg-danger-subtle ">
+        <div class="col-md-3">
+          <input type="text" class="form-control" placeholder="Nome da turma">
+        </div>
+        <div class="col-md-2">
+          <input type="number" class="form-control" placeholder="Nº de alunos">
+        </div>
+        <div class="col-md-2">
+          <select class="form-select">
+            <option selected disabled>Situação</option>
+            <option>Ativa</option>
+            <option>Inativa</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <select class="form-select">
+            <option selected disabled>Perfil da turma</option>
+            <option>Muito frequente</option>
+            <option>Frequente</option>
+            <option>Parcialmente frequente</option>
+            <option>Infrequente</option>
+            <option>Muito infrequente</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-primary w-100">Cadastrar turma</button>
+        </div>
+      </form>
+      <!-- Tabela de Turmas -->
+      <div class="table-responsive">
+        <table class="table align-middle mb-0">
+          <thead>
+            <tr>
+              <th>Turma</th>
+              <th>Nº de alunos</th>
+              <th>Situação</th>
+              <th>Perfil</th>
+              <th class="text-end">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fw-bold">2º Ano A</td>
+              <td>32</td>
+              <td>
+                <span class="badge rounded-pill text-bg-success px-3 py-2">Ativa</span>
+              </td>
+              <td>
+                <span class="badge rounded-pill text-bg-primary px-3 py-2">Frequente</span>
+              </td>
+              <td class="text-end">
+                <button class="btn btn-outline-secondary btn-sm me-1" title="Editar"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-outline-danger btn-sm" title="Arquivar"><i class="bi bi-x-circle"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td class="fw-bold">2º Ano B</td>
+              <td>28</td>
+              <td>
+                <span class="badge rounded-pill text-bg-danger px-3 py-2">Inativa</span>
+              </td>
+              <td>
+                <span class="badge rounded-pill text-bg-warning px-3 py-2 text-dark">Parcialmente frequente</span>
+              </td>
+              <td class="text-end">
+                <button class="btn btn-outline-secondary btn-sm me-1" title="Editar"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-outline-danger btn-sm" title="Arquivar"><i class="bi bi-x-circle"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td class="fw-bold">2º Ano C</td>
+              <td>34</td>
+              <td>
+                <span class="badge rounded-pill text-bg-success px-3 py-2">Ativa</span>
+              </td>
+              <td>
+                <span class="badge rounded-pill text-bg-info px-3 py-2 text-dark">Muito frequente</span>
+              </td>
+              <td class="text-end">
+                <button class="btn btn-outline-secondary btn-sm me-1" title="Editar"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-outline-danger btn-sm" title="Arquivar"><i class="bi bi-x-circle"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td class="fw-bold">2º Ano D</td>
+              <td>30</td>
+              <td>
+                <span class="badge rounded-pill text-bg-success px-3 py-2">Ativa</span>
+              </td>
+              <td>
+                <span class="badge rounded-pill text-bg-secondary px-3 py-2">Infrequente</span>
+              </td>
+              <td class="text-end">
+                <button class="btn btn-outline-secondary btn-sm me-1" title="Editar"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-outline-danger btn-sm" title="Arquivar"><i class="bi bi-x-circle"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td class="fw-bold">2º Ano E</td>
+              <td>20</td>
+              <td>
+                <span class="badge rounded-pill text-bg-danger px-3 py-2">Inativa</span>
+              </td>
+              <td>
+                <span class="badge rounded-pill text-bg-dark px-3 py-2">Muito infrequente</span>
+              </td>
+              <td class="text-end">
+                <button class="btn btn-outline-secondary btn-sm me-1" title="Editar"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-outline-danger btn-sm" title="Arquivar"><i class="bi bi-x-circle"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Bloco 2: Calendário Letivo -->
+    <div class="bg-white rounded-4 shadow-sm p-4 mb-4">
+      <h3 class="fw-bold mb-3">Calendário Letivo</h3>
+      <form class="row gy-2 gx-3 align-items-end mb-4">
+        <div class="col-md-2">
+          <label class="form-label mb-1">Mês</label>
+          <select class="form-select">
+            <option>Janeiro</option>
+            <option>Fevereiro</option>
+            <option>Março</option>
+            <option>Abril</option>
+            <option>Maio</option>
+            <option>Junho</option>
+            <option>Julho</option>
+            <option selected>Agosto</option>
+            <option>Setembro</option>
+            <option>Outubro</option>
+            <option>Novembro</option>
+            <option>Dezembro</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label class="form-label mb-1">Semana</label>
+          <select class="form-select">
+            <option>05/08 a 09/08/2025</option>
+            <option>12/08 a 16/08/2025</option>
+            <option>19/08 a 23/08/2025</option>
+            <option>26/08 a 30/08/2025</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label class="form-label mb-1">Dia não letivo</label>
+          <input type="date" class="form-control">
+        </div>
+        <div class="col-md-3">
+          <label class="form-label mb-1">Motivo</label>
+          <select class="form-select">
+            <option>Feriado Nacional</option>
+            <option>Feriado Estadual</option>
+            <option>Feriado Municipal</option>
+            <option>JPP</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="col-md-2 d-flex gap-2">
+          <button class="btn btn-primary w-100" type="button">Salvar alterações</button>
+          <button class="btn btn-outline-secondary w-100" type="button">Aplicar a todas as turmas</button>
+        </div>
+      </form>
+      <div class="table-responsive mb-3">
+        <table class="table align-middle text-center mb-0 table-hover shadow-sm">
+          <thead class="table-primary">
+            <tr>
+              <th style="width:120px">Semana</th>
+              <th style="width:65px">Seg</th>
+              <th style="width:65px">Ter</th>
+              <th style="width:65px">Qua</th>
+              <th style="width:65px">Qui</th>
+              <th style="width:65px">Sex</th>
+              <th style="width:220px">Dias Não Letivos</th>
+              <th style="width:75px">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fw-medium">05/08 a 09/08</td>
+              <td class="bg-success-subtle">Letivo</td>
+              <td class="bg-success-subtle">Letivo</td>
+              <td class="bg-danger-subtle text-danger fw-semibold">Feriado<br><span class="small">Nacional</span></td>
+              <td class="bg-success-subtle">Letivo</td>
+              <td class="bg-success-subtle">Letivo</td>
+              <td>
+                <span class="badge rounded-pill bg-danger-subtle text-danger">07/08 (Feriado Nacional)</span>
+              </td>
+              <td>
+                <button class="btn btn-sm btn-outline-secondary" title="Editar">
+                  <i class="bi bi-pencil"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="fw-medium">12/08 a 16/08</td>
+              <td class="bg-success-subtle">Letivo</td>
+              <td class="bg-success-subtle">Letivo</td>
+              <td class="bg-success-subtle">Letivo</td>
+              <td class="bg-success-subtle">Letivo</td>
+              <td class="bg-warning-subtle text-warning fw-semibold">JPP</td>
+              <td>
+                <span class="badge rounded-pill bg-warning-subtle text-warning">16/08 (JPP)</span>
+              </td>
+              <td>
+                <button class="btn btn-sm btn-outline-secondary" title="Editar">
+                  <i class="bi bi-pencil"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="fw-medium">19/08 a 23/08</td>
+              <td class="bg-success-subtle">Letivo</td>
+              <td class="bg-success-subtle">Letivo</td>
+              <td class="bg-success-subtle">Letivo</td>
+              <td class="bg-success-subtle">Letivo</td>
+              <td class="bg-success-subtle">Letivo</td>
+              <td>—</td>
+              <td>
+                <button class="btn btn-sm btn-outline-secondary" title="Editar">
+                  <i class="bi bi-pencil"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="fw-medium">26/08 a 30/08</td>
+              <td class="bg-success-subtle">Letivo</td>
+              <td class="bg-danger-subtle text-danger fw-semibold">Feriado<br><span class="small">Estadual</span></td>
+              <td class="bg-success-subtle">Letivo</td>
+              <td class="bg-success-subtle">Letivo</td>
+              <td class="bg-success-subtle">Letivo</td>
+              <td>
+                <span class="badge rounded-pill bg-danger-subtle text-danger">27/08 (Feriado Estadual)</span>
+              </td>
+              <td>
+                <button class="btn btn-sm btn-outline-secondary" title="Editar">
+                  <i class="bi bi-pencil"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Bloco 3: Controle de Aulas por Turma -->
+    <div class="bg-white rounded-4 shadow-sm p-4">
+      <h3 class="fw-bold mb-3">Controle de Aulas por Turma</h3>
+      <div class="table-responsive">
+        <table class="table align-middle text-center mb-0 table-hover shadow-sm">
+          <thead class="table-info">
+            <tr>
+              <th>Turma</th>
+              <th>Semana</th>
+              <th>Disciplina</th>
+              <th>Aulas Previstas</th>
+              <th>Aulas Dadas</th>
+              <th>Aulas Não Dadas</th>
+              <th>Observações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="2" class="align-middle bg-body-secondary">2º Ano A</td>
+              <td rowspan="2" class="align-middle">05/08 a 09/08</td>
+              <td>Língua Portuguesa</td>
+              <td class="bg-success-subtle">5</td>
+              <td class="bg-success-subtle">5</td>
+              <td class="bg-warning-subtle text-warning">0</td>
+              <td><button class="btn btn-outline-secondary btn-sm"><i class="bi bi-pencil"></i></button></td>
+            </tr>
+            <tr>
+              <td>Matemática</td>
+              <td class="bg-success-subtle">5</td>
+              <td class="bg-warning-subtle text-warning">4</td>
+              <td class="bg-danger-subtle text-danger">1</td>
+              <td><button class="btn btn-outline-secondary btn-sm"><i class="bi bi-pencil"></i></button></td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="align-middle bg-body-secondary">2º Ano B</td>
+              <td rowspan="2" class="align-middle">05/08 a 09/08</td>
+              <td>Língua Portuguesa</td>
+              <td class="bg-success-subtle">5</td>
+              <td class="bg-warning-subtle text-warning">4</td>
+              <td class="bg-danger-subtle text-danger">1</td>
+              <td><button class="btn btn-outline-secondary btn-sm"><i class="bi bi-pencil"></i></button></td>
+            </tr>
+            <tr>
+              <td>Matemática</td>
+              <td class="bg-success-subtle">5</td>
+              <td class="bg-success-subtle">5</td>
+              <td class="bg-warning-subtle text-warning">0</td>
+              <td><button class="btn btn-outline-secondary btn-sm"><i class="bi bi-pencil"></i></button></td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="align-middle bg-body-secondary">3º Ano A</td>
+              <td rowspan="2" class="align-middle">05/08 a 09/08</td>
+              <td>Língua Portuguesa</td>
+              <td class="bg-success-subtle">5</td>
+              <td class="bg-success-subtle">5</td>
+              <td class="bg-warning-subtle text-warning">0</td>
+              <td><button class="btn btn-outline-secondary btn-sm"><i class="bi bi-pencil"></i></button></td>
+            </tr>
+            <tr>
+              <td>Matemática</td>
+              <td class="bg-success-subtle">5</td>
+              <td class="bg-warning-subtle text-warning">4</td>
+              <td class="bg-danger-subtle text-danger">1</td>
+              <td><button class="btn btn-outline-secondary btn-sm"><i class="bi bi-pencil"></i></button></td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="align-middle bg-body-secondary">3º Ano B</td>
+              <td rowspan="2" class="align-middle">05/08 a 09/08</td>
+              <td>Língua Portuguesa</td>
+              <td class="bg-success-subtle">5</td>
+              <td class="bg-success-subtle">5</td>
+              <td class="bg-warning-subtle text-warning">0</td>
+              <td><button class="btn btn-outline-secondary btn-sm"><i class="bi bi-pencil"></i></button></td>
+            </tr>
+            <tr>
+              <td>Matemática</td>
+              <td class="bg-success-subtle">5</td>
+              <td class="bg-danger-subtle text-danger">3</td>
+              <td class="bg-warning-subtle text-warning">2</td>
+              <td><button class="btn btn-outline-secondary btn-sm"><i class="bi bi-pencil"></i></button></td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="align-middle bg-body-secondary">4º Ano A</td>
+              <td rowspan="2" class="align-middle">05/08 a 09/08</td>
+              <td>Língua Portuguesa</td>
+              <td class="bg-success-subtle">5</td>
+              <td class="bg-warning-subtle text-warning">4</td>
+              <td class="bg-danger-subtle text-danger">1</td>
+              <td><button class="btn btn-outline-secondary btn-sm"><i class="bi bi-pencil"></i></button></td>
+            </tr>
+            <tr>
+              <td>Matemática</td>
+              <td class="bg-success-subtle">5</td>
+              <td class="bg-success-subtle">5</td>
+              <td class="bg-warning-subtle text-warning">0</td>
+              <td><button class="btn btn-outline-secondary btn-sm"><i class="bi bi-pencil"></i></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
