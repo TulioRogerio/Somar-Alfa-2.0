@@ -5,47 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Somar Alfa - Repositório de Links</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    .btn-link-custom {
+      font-weight: bold;
+      font-size: 1.08rem;
+      color: #0d6efd;
+      text-decoration: none;
+    }
+    .btn-link-custom:hover {
+      color: #0a58ca;
+      text-decoration: underline;
+    }
+    .td-badges {
+      min-width: 220px;
+    }
+    @media (max-width: 576px) {
+      .td-badges {
+        min-width: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      .td-badges .badge {
+        margin-bottom: 5px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container mt-5">
     <div class="row justify-content-center">
-      <div class="col-md-8 col-lg-6">
+      <div class="col-md-8">
         <div class="card shadow rounded-4">
           <div class="card-body">
             <h1 class="card-title text-center text-primary mb-4">Somar Alfa 2</h1>
             <p class="card-text text-center mb-4">
               Essa página é um repositório contendo todas as páginas já aprovadas. Novos links serão inseridos conforme a evolução do trabalho.
             </p>
-            <ul class="list-group mb-4">
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href="https://tuliorogerio.github.io/Somar-Alfa-2.0/templates/Login/" target="_blank" class="link-primary fw-bold">
-                  Tela de login
-                </a>
-                <span class="badge text-bg-primary">Novo</span>
-                <span class="badge text-bg-warning">Aguardando validação</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href="https://tuliorogerio.github.io/Somar-Alfa-2.0/templates/plano_de_acao/" target="_blank" class="link-primary fw-bold">
-                  Plano de Ação
-                </a>
-                <span class="badge text-bg-primary">Novo</span>
-                <span class="badge text-bg-warning">Aguardando validação</span>
-              </li>                      
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href="https://tuliorogerio.github.io/Somar-Alfa-2.0/templates/#ciclo_de_gestao/" target="_blank" class="link-primary fw-bold">
-                  Ciclo de Gestão
-                </a>
-                <span class="badge text-bg-primary">Novo</span>
-                <span class="badge text-bg-warning">Aguardando validação</span>
-              </li>                      
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href="https://tuliorogerio.github.io/Somar-Alfa-2.0/templates/#ciclo_de_gestao_vt1/" target="_blank" class="link-primary fw-bold">
-                  Ciclo de Gestão - Exemplo de Planejamento - VT01
-                </a>
-                <span class="badge text-bg-primary">Novo</span>
-                <span class="badge text-bg-warning">Aguardando validação</span>
-              </li>                      
-            </ul>
+            <div class="table-responsive">
+              <table class="table align-middle">
+                <tbody>
+                  <tr>
+                    <td>
+                      <a href="https://tuliorogerio.github.io/Somar-Alfa-2.0/templates/Login/" target="_blank" class="btn-link-custom">
+                        Tela de login
+                      </a>
+                    </td>
+                    <td class="text-end td-badges">
+                      <span class="badge text-bg-primary me-2">Novo</span>
+                      <span class="badge text-bg-warning">Aguardando validação</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="https://tuliorogerio.github.io/Somar-Alfa-2.0/templates/plano_de_acao/" target="_blank" class="btn-link-custom">
+                        Plano de Ação
+                      </a>
+                    </td>
+                    <td class="text-end td-badges">
+                      <span class="badge text-bg-primary me-2">Novo</span>
+                      <span class="badge text-bg-warning">Aguardando validação</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="https://tuliorogerio.github.io/Somar-Alfa-2.0/templates/#ciclo_de_gestao/" target="_blank" class="btn-link-custom">
+                        Ciclo de Gestão
+                      </a>
+                    </td>
+                    <td class="text-end td-badges">
+                      <span class="badge text-bg-primary me-2">Novo</span>
+                      <span class="badge text-bg-warning">Aguardando validação</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="https://tuliorogerio.github.io/Somar-Alfa-2.0/templates/#ciclo_de_gestao_vt1/" target="_blank" class="btn-link-custom">
+                        Ciclo de Gestão - Exemplo de Planejamento - VT01
+                      </a>
+                    </td>
+                    <td class="text-end td-badges">
+                      <span class="badge text-bg-primary me-2">Novo</span>
+                      <span class="badge text-bg-warning">Aguardando validação</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
