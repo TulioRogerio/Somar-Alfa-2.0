@@ -12,6 +12,8 @@
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
   <meta name="theme-color" content="#712cf9" />
   <link href="sidebars.css" rel="stylesheet" />
+  <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
+
   <style>
     .conteudo-principal {
       max-height: 100vh;
@@ -253,7 +255,7 @@
         </li>
         <li>
           <a href="#" class="nav-link link-body-emphasis">
-          <!--<a href="#" class="nav-link active">-->
+            <!--<a href="#" class="nav-link active">-->
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
               class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8z" />
@@ -282,7 +284,7 @@
           </div>
         </li>
         <li class="mb-1"> <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-            data-bs-toggle="collapse show" data-bs-target="#dashboard-collapse" aria-expanded="false">
+            data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
             Ciclo de Gestão
           </button>
           <div class="collapse" id="dashboard-collapse">
@@ -302,7 +304,7 @@
               <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Balanço Final</a>
               </li>
               <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Visitas Técnicas</a>
-              </li>              
+              </li>
             </ul>
           </div>
         </li>
@@ -357,103 +359,91 @@
         </path>
       </symbol>
     </svg>
-  <div class="container py-4">
-    <!-- Cabeçalho -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
-      <h4 class="m-0">Visitas Técnicas</h4>
-      <div class="d-flex align-items-center">
-        <button type="button" class="btn btn-outline-secondary me-2">
-          <i class="bi bi-lock-fill"></i> Aberto
-        </button>
-        <button type="button" class="btn btn-success me-3">
-          <i class="bi bi-cloud-check-fill"></i> Gravado no servidor
-        </button>
-        <button type="button" class="btn-close" aria-label="Fechar"></button>
+    <div class="container py-4">
+      <!-- Cabeçalho -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="m-0">Visitas Técnicas</h4>
+        <div class="d-flex align-items-center">
+          <button type="button" class="btn btn-success me-3">
+            <i class="bi bi-cloud-check-fill"></i> Ata em modo rascunho
+          </button>
+          <button type="button" class="btn btn-warning me-3">
+            <i class="bi bi-cloud-check-fill"></i> Ata finalizada
+          </button>
+          <button type="button" class="btn-close" aria-label="Fechar"></button>
+        </div>
       </div>
+
+      <!-- Formulário -->
+      <form>
+        <div class="row g-3 mb-4">
+          <div class="col-md-5">
+            <label for="instituicao" class="form-label">Instituição</label>
+            <input type="text" class="form-control" id="instituicao"
+              placeholder="EMEF Laurinda Pereira do Nascimento" />
+          </div>
+          <div class="col-md-4">
+            <label for="localSala" class="form-label">Local / Sala</label>
+            <input type="text" class="form-control" id="localSala" placeholder="teste" />
+          </div>
+          <div class="col-md-2">
+            <label for="organizador" class="form-label">Organizador</label>
+            <input type="text" class="form-control" id="organizador" placeholder="Nome do organizador" />
+          </div>
+          <div class="col-md-1">
+            <label for="dataAta" class="form-label">Data</label>
+            <input type="date" class="form-control" id="dataAta" value="2025-03-31" />
+          </div>
+        </div>
+
+        <!-- Seções de texto livre -->
+        <div class="mb-4">
+          <label for="participantes" class="form-label">Participantes</label>
+          <textarea class="form-control" id="participantes" rows="5"
+            placeholder="Liste os participantes da reunião..."></textarea>
+        </div>
+
+        <div class="mb-4">
+          <label for="topicos" class="form-label">Tópicos discutidos</label>
+          <textarea class="form-control" id="topicos" rows="3" placeholder="Descreva os pontos abordados..."></textarea>
+        </div>
+        <div class="mb-4">
+          <label for="ataVisita" class="form-label">Ata da visita</label>
+          <textarea class="form-control" id="ataVisita" rows="5"
+            placeholder="Registre aqui o conteúdo completo da ata..."></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="formFile" class="form-label">Anexar ata</label>
+          <input class="form-control" type="file" id="formFile">
+        </div>
+        <!-- Botão de envio (exemplo) -->
+        <div class="text-end">
+          <button type="button" class="btn btn-warning">Editar ata</button>
+          <button type="submit" class="btn btn-primary">Salvar alterações</button>
+        </div>
+      </form>
+      <p>
+        Informações importantes:<br>
+        1 - Inserir, ou não, um campo para dar "ciência" (visto que não é assinatura digital) da participação dos
+        membros?<br>
+        2 - No topo da página, somente 1 dos botões ficará ativo: "Ata em modo rascunho" ou "Ata finalizada"
+      </p>
     </div>
-
-    <!-- Formulário -->
-    <form>
-      <div class="row g-3 mb-4">
-        <div class="col-md-5">
-          <label for="instituicao" class="form-label">Instituição</label>
-          <input
-            type="text"
-            class="form-control"
-            id="instituicao"
-            placeholder="EMEF Laurinda Pereira do Nascimento"
-          />
-        </div>
-        <div class="col-md-4">
-          <label for="localSala" class="form-label">Local / Sala</label>
-          <input
-            type="text"
-            class="form-control"
-            id="localSala"
-            placeholder="teste"
-          />
-        </div>
-        <div class="col-md-2">
-          <label for="organizador" class="form-label">Organizador</label>
-          <input
-            type="text"
-            class="form-control"
-            id="organizador"
-            placeholder="Nome do organizador"
-          />
-        </div>
-        <div class="col-md-1">
-          <label for="dataAta" class="form-label">Data</label>
-          <input
-            type="date"
-            class="form-control"
-            id="dataAta"
-            value="2025-03-31"
-          />
-        </div>
-      </div>
-
-      <!-- Seções de texto livre -->
-      <div class="mb-4">
-        <label for="participantes" class="form-label">Participantes</label>
-        <textarea
-          class="form-control"
-          id="participantes"
-          rows="3"
-          placeholder="Liste os participantes da reunião..."
-        ></textarea>
-      </div>
-
-      <div class="mb-4">
-        <label for="topicos" class="form-label">Tópicos discutidos</label>
-        <textarea
-          class="form-control"
-          id="topicos"
-          rows="3"
-          placeholder="Descreva os pontos abordados..."
-        ></textarea>
-      </div>
-
-      <div class="mb-4">
-        <label for="ataVisita" class="form-label">Ata da visita</label>
-        <textarea
-          class="form-control"
-          id="ataVisita"
-          rows="5"
-          placeholder="Registre aqui o conteúdo completo da ata..."
-        ></textarea>
-      </div>
-
-      <!-- Botão de envio (exemplo) -->
-      <div class="text-end">
-        <button type="submit" class="btn btn-primary">Salvar alterações</button>
-      </div>
-    </form>
-  </div>
   </section>
   </div>
   <script src="../assets/dist/js/bootstrap.bundle.min.js" class="astro-vvvwv3sm"></script>
   <script src="sidebars.js" class="astro-vvvwv3sm"></script>
+  <script>
+    ClassicEditor.create(document.querySelector('#participantes'), {
+      language: 'pt'
+    }).catch(error => { console.error(error); });
+    ClassicEditor.create(document.querySelector('#topicos'), {
+      language: 'pt'
+    }).catch(error => { console.error(error); });
+    ClassicEditor.create(document.querySelector('#ataVisita'), {
+      language: 'pt'
+    }).catch(error => { console.error(error); });
+  </script>
 </body>
 
 </html>
