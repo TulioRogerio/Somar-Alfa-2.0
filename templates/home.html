@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt" data-bs-theme="auto">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Túlio Permino Rogério" />
+    <title>Somar Alfa 2 - Início</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
+    <script src="assets/js/color-modes.js"></script>
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="theme-color" content="#712cf9">
+    <link href="assets/dist/css/sidebars.css" rel="stylesheet">
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <style>
+        #graficoLinha,
+        #graficoLinha2,
+        #graficoLinha3,
+        #graficoLinha4 {
+            height: 200px !important;
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem
+            }
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: #0000001a;
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em #0000001a, inset 0 .125em .5em #00000026
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch
+        }
+
+        .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500
+        }
+
+        .bd-mode-toggle .bi {
+            width: 1em;
+            height: 1em
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important
+        }
+
+        body {
+            background-color: #f4f7fa;
+            /* Claro */
+        }
+
+        [data-bs-theme="dark"] body {
+            background-color: #222b35;
+            /* Escuro elegante */
+        }
+
+        .card {
+            border: none;
+            border-radius: 1.25rem;
+            box-shadow: 0 1px 6px rgba(60, 60, 60, 0.07), 0 1.5px 10px rgba(60, 60, 60, 0.05);
+        }
+
+        .card .icon-bg {
+            background: #f4f7fa;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-title {
+            font-weight: 500;
+            font-size: 1rem;
+            color: #7a7a7a;
+        }
+
+        .dashboard-title {
+            font-weight: bold;
+            font-size: 2.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-big {
+            font-size: 2.25rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Elementos do menu de modo claro / escuro -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path
+                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z">
+            </path>
+            <path
+                d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z">
+            </path>
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path
+                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z">
+            </path>
+        </symbol>
+    </svg>
+
+    <!-- Elementos do menu de modo claro / escuro -->
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"> <button
+            class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+            aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)"> <svg
+                class="bi my-1 theme-icon-active" aria-hidden="true">
+                <use href="#circle-half"></use>
+            </svg> <span class="visually-hidden" id="bd-theme-text">Toggle theme</span> </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+            <li> <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+                    aria-pressed="false"> <svg class="bi me-2 opacity-50" aria-hidden="true">
+                        <use href="#sun-fill"></use>
+                    </svg>
+                    Light
+                    <svg class="bi ms-auto d-none" aria-hidden="true">
+                        <use href="#check2"></use>
+                    </svg> </button> </li>
+            <li> <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+                    aria-pressed="false"> <svg class="bi me-2 opacity-50" aria-hidden="true">
+                        <use href="#moon-stars-fill"></use>
+                    </svg>
+                    Dark
+                    <svg class="bi ms-auto d-none" aria-hidden="true">
+                        <use href="#check2"></use>
+                    </svg> </button> </li>
+            <li> <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+                    aria-pressed="true"> <svg class="bi me-2 opacity-50" aria-hidden="true">
+                        <use href="#circle-half"></use>
+                    </svg>
+                    Auto
+                    <svg class="bi ms-auto d-none" aria-hidden="true">
+                        <use href="#check2"></use>
+                    </svg> </button> </li>
+        </ul>
+    </div>
+
+    <!-- Icones comuns a todos os menus -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="logo-conecta" viewBox="0 0 40 40">
+            <image href="assets/brand/conecta_icone.ico" width="40" height="40" />
+        </symbol>
+        <symbol id="bi bi-house" viewBox="0 0 16 16">
+            <path
+                d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+        </symbol>
+        <symbol id="bi bi-people" viewBox="0 0 16 16">
+            <path
+                d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4" />
+        </symbol>
+        <symbol id="bi bi-building" viewBox="0 0 16 16">
+            <path
+                d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
+            <path
+                d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3z" />
+        </symbol>
+        <symbol id="bi bi-journal-bookmark-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8z" />
+            <path
+                d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2" />
+            <path
+                d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z" />
+        </symbol>
+        <symbol id="bi bi-clipboard-data" viewBox="0 0 16 16">
+            <path
+                d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0z" />
+            <path
+                d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z" />
+            <path
+                d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z" />
+        </symbol>
+        <symbol id="bi bi-infinity" viewBox="0 0 16 16">
+            <path
+                d="M5.68 5.792 7.345 7.75 5.681 9.708a2.75 2.75 0 1 1 0-3.916ZM8 6.978 6.416 5.113l-.014-.015a3.75 3.75 0 1 0 0 5.304l.014-.015L8 8.522l1.584 1.865.014.015a3.75 3.75 0 1 0 0-5.304l-.014.015zm.656.772 1.663-1.958a2.75 2.75 0 1 1 0 3.916z" />
+        </symbol>
+        <symbol id="bi bi-bar-chart-line" viewBox="0 0 16 16">
+            <path
+                d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1zm1 12h2V2h-2zm-3 0V7H7v7zm-5 0v-3H2v3z" />
+        </symbol>
+        <symbol id="bi bi-arrow-left-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5" />
+        </symbol>
+    </svg>
+
+    <!-- Início da página propriamente dito -->
+    <main class="d-flex flex-nowrap">
+
+        <!-- Menu-->
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;"> <a href="/"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> <svg
+                    class="bi pe-none me-2" width="40" height="32" aria-hidden="true">
+                    <use xlink:href="#logo-conecta"></use>
+                </svg> <span class="fs-4">Somar Alfa</span> </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item"> <a href="#" class="nav-link active" aria-current="page">
+                        <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
+                            <use xlink:href="#bi bi-house"></use>
+                        </svg>
+                        Início
+                    </a> </li>
+                <li> <a href="./gestao_escolar.html" class="nav-link link-body-emphasis">
+                        <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
+                            <use xlink:href="#bi bi-building"></use>
+                        </svg>
+                        Gestão escolar
+                    </a> </li>
+                <li> <a href="#" class="nav-link link-body-emphasis">
+                        <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
+                            <use xlink:href="#bi bi-journal-bookmark-fill"></use>
+                        </svg>
+                        Pactuação de metas
+                    </a> </li>
+                <li> <a href="./plano_de_acao.html" class="nav-link link-body-emphasis">
+                        <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
+                            <use xlink:href="#bi bi-clipboard-data"></use>
+                        </svg>
+                        Plano de Ação
+                    </a> </li>
+                <li> <a href="./ciclo_de_gestao.html" class="nav-link link-body-emphasis">
+                        <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
+                            <use xlink:href="#bi bi-infinity"></use>
+                        </svg>
+                        Ciclo de Gestão
+                    </a> </li>
+                <li> <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#indicador_estruturante" aria-expanded="false">
+                        Indicadores Estruturantes
+                    </button>
+                    <div class="collapse" id="indicador_estruturante">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="#"
+                                    class="link-body-emphasis d-inline-flex text-decoration-none rounded">Avaliações
+                                    Externas</a>
+                            </li>
+                            <li><a href="./frequencia.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Frequência</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li> <a href="#" class="nav-link link-body-emphasis">
+                        <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
+                            <use xlink:href="#bi bi-bar-chart-line"></use>
+                        </svg>
+                        Relatórios gráficos
+                    </a> </li>
+                <li> <a href="#" class="nav-link link-body-emphasis">
+                        <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
+                            <use xlink:href="#bi bi-arrow-left-right"></use>
+                        </svg>
+                        Comunicação
+                    </a> </li>
+            </ul>
+            <hr>
+            <div class="dropdown"> <a href="#"
+                    class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown" aria-expanded="false"> <img src="assets/brand/usuario1.png" alt=""
+                        width="32" height="32" class="rounded-circle me-2"> <strong>Túlio - Adm. Gerco</strong> </a>
+                <ul class="dropdown-menu text-small shadow">
+                    <li><a class="dropdown-item" href="#">Configurar o perfil</a></li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+                    <li><a class="dropdown-item" href="#">Sair do Sistema</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="b-example-divider b-example-vr"></div> <!-- Divisor de menu / conteúdo -->
+
+        <!-- Configuração da seção a direita-->
+        <div class="p-4 conteudo-principal flex-grow-1 overflow-auto">
+            <div class="dashboard-title text-center mb-4">Painel de Análise</div>
+            <p>(inserir botão de salvamento automático)</p>
+            <!-- Início do Conteúdo-->
+            <div class="container-fluid">
+
+                <!-- Linha 1: Indicadores IDEB, IDEB-meta, IDEBES, Idebes-meta -->
+                <div class="row g-3 mb-3">
+                    <div class="col-12 col-md-3">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="card-title mb-0 fw-bold">IDEB</div>
+                                <canvas id="graficoLinha" height="120"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="card-title mb-0 fw-bold">IDEB - Metas</div>
+                                <canvas id="graficoLinha2" height="120"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="card-title mb-0 fw-bold">IDEBES</div>
+                                <canvas id="graficoLinha3" height="120"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="card-title mb-0 fw-bold">Idebes - meta</div>
+                                <canvas id="graficoLinha4" height="120"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Linha 2: Tarefas com vencimento próximo + VT confirmadas -->
+                <div class="row g-3 mb-3">
+                    <div class="col-12 col-md-6 col-xl-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <div class="card-title fw-bold"> <i class="bi bi-clock-history me-2 text-warning"></i>
+                                    Tarefas com data de vencimento próximas</div>
+                                <!-- Lista de tarefas ou gráfico -->
+                                <ul class="list-group list-group-flush">
+                                    <!-- Exemplo de item de tarefa -->
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <div>
+                                            <span class="fw-semibold">Produção do material</span>
+                                            <span class="text-muted small ms-2">(Maria)</span>
+                                        </div>
+                                        <div>
+                                            <span class="badge rounded-pill bg-warning text-dark me-2">
+                                                18/07/2025
+                                            </span>
+                                            <span class="badge bg-secondary small">2 dias</span>
+                                        </div>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <div>
+                                            <span class="fw-semibold">Planejamento de aula</span>
+                                            <span class="text-muted small ms-2">(Carlos)</span>
+                                        </div>
+                                        <div>
+                                            <span class="badge rounded-pill bg-danger me-2">
+                                                16/07/2025
+                                            </span>
+                                            <span class="badge bg-danger small">Vence hoje!</span>
+                                        </div>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <div>
+                                            <span class="fw-semibold">Enviar relatório</span>
+                                            <span class="text-muted small ms-2">(Ana)</span>
+                                        </div>
+                                        <div>
+                                            <span class="badge rounded-pill bg-warning text-dark me-2">
+                                                20/07/2025
+                                            </span>
+                                            <span class="badge bg-secondary small">5 dias</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="mt-3 text-end">
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Ver todas as tarefas</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <div class="card-title fw-bold">VT confirmadas</div>
+                                <!-- Lista ou gráfico -->
+<ul class="list-group list-group-flush">
+
+  <!-- Visita agendada -->
+  <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+    <div>
+      <span class="fw-semibold">Visita à EMEF Monte Castelo</span>
+      <span class="text-muted small ms-2">(Técnico: João)</span>
+    </div>
+    <div>
+      <span class="badge rounded-pill bg-warning text-dark me-2">
+        18/07/2025
+      </span>
+      <span class="badge bg-secondary small">Agendada</span>
+    </div>
+  </li>
+
+  <!-- Visita vencendo hoje -->
+  <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+    <div>
+      <span class="fw-semibold">Visita à EMEF São Pedro</span>
+      <span class="text-muted small ms-2">(Técnico: Maria)</span>
+    </div>
+    <div>
+      <span class="badge rounded-pill bg-danger me-2">
+        15/07/2025
+      </span>
+      <span class="badge bg-danger small">Vence hoje!</span>
+    </div>
+  </li>
+
+  <!-- Visita a ser agendada -->
+  <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+    <div>
+      <span class="fw-semibold">Visita à EMEF Paulo Freire</span>
+      <span class="text-muted small ms-2">(Técnico: Carlos)</span>
+    </div>
+    <div>
+      <span class="badge bg-light text-dark small border">A ser agendada</span>
+    </div>
+  </li>
+
+</ul>
+
+<div class="mt-3 text-end">
+  <a href="#" class="btn btn-sm btn-outline-primary">Ver todas as visitas</a>
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Linha 3: Agenda (maior) + Visitas Técnicas -->
+                <div class="row g-3 mb-3">
+                    <div class="col-12 col-xl-8">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <div class="card-title fw-bold">Agenda</div>
+                                <!-- Calendário ou resumo de eventos -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <div class="card-title fw-bold">Visitas Técnicas</div>
+                                <!-- Lista ou gráfico -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Linha 4: Frequência LP + Frequência Mat -->
+                <div class="row g-3 mb-3">
+                    <div class="col-12 col-md-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <div class="card-title fw-bold">Frequência - LP</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <div class="card-title fw-bold">Frequência - Mat</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Linha 5: Plano | Mapas | Tarefas -->
+                <div class="row g-3 mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="card-title fw-bold">Plano</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="card-title fw-bold">Mapas</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="card-title fw-bold">Tarefas</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Linha 6: Teste de Consistência | Produtos -->
+                <div class="row g-3 mb-3">
+                    <div class="col-12 col-md-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="card-title fw-bold">Teste de consistência</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body text-center">
+                                <div class="card-title fw-bold">Produtos</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Fim do Conteúdo - -->
+        </div>
+        <script src="assets/dist/js/bootstrap.bundle.min.js" class="astro-vvvwv3sm"></script>
+        <script src="assets/dist/js/sidebars.js" class="astro-vvvwv3sm"></script>
+        <script>
+            ClassicEditor.create(document.querySelector('#participantes'), {
+                language: 'pt'
+            }).catch(error => { console.error(error); });
+            ClassicEditor.create(document.querySelector('#topicos'), {
+                language: 'pt'
+            }).catch(error => { console.error(error); });
+            ClassicEditor.create(document.querySelector('#ataVisita'), {
+                language: 'pt'
+            }).catch(error => { console.error(error); });
+        </script>
+
+        <script>
+            function criarGrafico(id, label, dados, cor) {
+                const ctx = document.getElementById(id);
+                if (Chart.getChart(ctx)) {
+                    Chart.getChart(ctx).destroy();
+                }
+
+                new Chart(ctx, {
+                    type: "line",
+                    data: {
+                        labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
+                        datasets: [{
+                            label: label,
+                            data: dados,
+                            borderColor: cor,
+                            backgroundColor: cor + "33", // Transparência
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: { beginAtZero: true }
+                        }
+                    }
+                });
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+                criarGrafico("graficoLinha", "IDEB", [10, 30, 20, 50, 60, 70], "#0d6efd");
+                criarGrafico("graficoLinha2", "IDEB - Metas", [5, 15, 25, 35, 45, 55], "#198754");
+                criarGrafico("graficoLinha3", "IDEBES", [18, 28, 36, 42, 51, 67], "#fd7e14");
+                criarGrafico("graficoLinha4", "IDEBES - Metas", [8, 17, 34, 40, 58, 66], "#dc3545");
+            });
+        </script>
+
+</body>
+
+</html>
