@@ -13,6 +13,41 @@
     <meta name="theme-color" content="#712cf9">
     <link href="assets/dist/css/sidebars.css" rel="stylesheet">
     <style>
+body[data-bs-theme="dark"] thead.table-light {
+  background-color: #181b1f !important; /* bem mais escuro */
+  color: #f8f9fa !important;
+  border-color: #333 !important;
+  /* Para reforçar o contraste da fonte */
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+body[data-bs-theme="dark"] .table-bordered > :not(caption) > * > * {
+  border-color: #333 !important;
+}
+
+body[data-bs-theme="dark"] .table {
+  --bs-table-bg: #23272b;
+  --bs-table-striped-bg: #22242a;
+  --bs-table-hover-bg: #181b1f;
+  color: #f8f9fa;
+}
+
+.card {
+            background-color: var(--bs-card-bg, #f8f9fa) !important;
+            color: var(--bs-body-color, #212529) !important;
+            border: 1px solid var(--bs-border-color, #dee2e6) !important;
+        }
+
+        /* Modo escuro: quando body tem data-bs-theme="dark" */
+        body[data-bs-theme="dark"] .card {
+            background: #23272b !important;
+            /* Bootstrap bg-dark-subtle */
+            color: #f8f9fa !important;
+            /* Bootstrap text-light */
+            border: 1px solid #444 !important;
+        }
+
         .bd-placeholder-img {
             font-size: 1.125rem;
             text-anchor: middle;
@@ -251,7 +286,8 @@
                                     class="link-body-emphasis d-inline-flex text-decoration-none rounded">Avaliações
                                     Externas</a>
                             </li>
-                            <li><a href="./frequencia.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Frequência</a>
+                            <li><a href="./frequencia.html"
+                                    class="link-body-emphasis d-inline-flex text-decoration-none rounded">Frequência</a>
                             </li>
                         </ul>
                     </div>
@@ -289,6 +325,7 @@
         <div class="p-4 conteudo-principal flex-grow-1 overflow-auto">
 
             <h2 class="mb-4 fw-bold">Plano de Ação - EMEF Sonho Lindo</h2>
+
             <!-- Nav tabs Bootstrap -->
             <ul class="nav nav-tabs mb-4" id="mapaTabs" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -302,49 +339,48 @@
             </ul>
 
             <div class="tab-content" id="mapaTabsContent">
-                <!-- Aba 1 -->
+
+                <!-- ================== ABA 1 ================== -->
                 <div class="tab-pane fade show active" id="mapa1" role="tabpanel" aria-labelledby="mapa1-tab">
-                    <!-- Todo o conteúdo do MAPA 1 aqui -->
-                    <!-- Bloco agrupado: Ação + problemas/desafios/dias + dados principais -->
-                    <div class="bg-soft rounded-4 shadow-sm p-4 mb-4">
+
+                    <div class="bg-body rounded-4 shadow-sm p-4 mb-4">
 
                         <!-- Card da ação -->
-                        <div class="card mb-4 rounded-4 border-0 shadow-sm" style="background: #f8fafc;">
+                        <div class="card mb-4 rounded-4 border-0 shadow-sm">
                             <div class="card-body px-5 py-4">
                                 <div class="d-flex align-items-center mb-2">
                                     <div>
-                                        <span class="fw-bold text-uppercase text-secondary small">Mapa de Ação</span>
+                                        <span class="fw-bold text-uppercase small">Mapa de Ação</span>
                                         <h3 class="fw-bold mb-1" style="letter-spacing: -.5px;">Alfabetizando na Idade
                                             Certa</h3>
                                     </div>
                                 </div>
-                                <p class="text-secondary mt-3 mb-2" style="font-size: 1.07rem;">
+                                <p class="mt-3 mb-2" style="font-size: 1.07rem;">
                                     Ação desenvolvida para fins de aumento na fluência leitora dos alunos de 1º e 2º ano
-                                    da EMEF Sonho
-                                    Lindo
+                                    da EMEF Sonho Lindo
                                 </p>
                                 <div>
                                     <button type="button" class="badge rounded-pill text-bg-warning"
-                                        data-bs-toggle="modal" data-bs-target="#editar.mapa">
+                                        data-bs-toggle="modal" data-bs-target="#editarMapa1">
                                         Editar
                                     </button>
-                                    <div class="modal fade" id="editar.mapa" data-bs-backdrop="static"
-                                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                    <!-- Modal Edição Mapa 1 -->
+                                    <div class="modal fade" id="editarMapa1" data-bs-backdrop="static"
+                                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="editarMapa1Label"
                                         aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Atualização
-                                                    </h1>
+                                                    <h1 class="modal-title fs-5" id="editarMapa1Label">Atualização</h1>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    Alterar título do mapa de ação: <input type="text"
-                                                        class="form-control" id="validationServer01"
+                                                    <label class="form-label">Título do mapa de ação</label>
+                                                    <input type="text" class="form-control mb-2"
                                                         value="Alfabetizando na Idade Certa" required>
-                                                    Alterar descrição do mapa de ação: <input type="text"
-                                                        class="form-control" id="validationServer01"
+                                                    <label class="form-label">Descrição do mapa de ação</label>
+                                                    <input type="text" class="form-control"
                                                         value="Ação desenvolvida para fins de aumento na fluência leitora dos alunos de 1º e 2º ano da EMEF Sonho Lindo"
                                                         required>
                                                 </div>
@@ -361,44 +397,44 @@
                             </div>
                         </div>
 
-                        <!-- Bloco de problemas, desafios e dias após o início -->
+                        <!-- Problema e desafio -->
                         <div class="row g-4 mb-4">
                             <!-- Problema -->
                             <div class="col-md-6">
-                                <div class="card rounded-4 shadow-sm border-0 h-100" style="background: #f8fafc;">
+                                <div class="card rounded-4 shadow-sm border-0 h-100">
                                     <div class="card-body px-4 py-4 d-flex align-items-start">
                                         <div class="me-3 flex-shrink-0">
                                             <i class="bi bi-exclamation-triangle-fill text-danger"
                                                 style="font-size: 2rem; opacity: .85;"></i>
                                         </div>
                                         <div>
-                                            <span
-                                                class="fw-bold text-uppercase text-secondary small mb-1 d-block">Problema</span>
-                                            <div class="fw-semibold" style="font-size: 1.08rem; color: #334;">
+                                            <span class="fw-bold text-uppercase small mb-1 d-block">Problema</span>
+                                            <div class="fw-semibold" style="font-size: 1.08rem;">
                                                 Mais de 50% dos alunos de 2º ano concluíram o ano de 2024 classificados
-                                                em níveis de
-                                                proficiência em
-                                                leitura de "Não Leitor" e "Sílabas" na avaliação de saída do SAEV.
+                                                em níveis de proficiência em leitura de "Não Leitor" e "Sílabas" na
+                                                avaliação de saída do SAEV.
                                                 <br>
                                                 <button type="button" class="badge rounded-pill text-bg-warning"
-                                                    data-bs-toggle="modal" data-bs-target="#editar.problema">
+                                                    data-bs-toggle="modal" data-bs-target="#editarProblema1">
                                                     Editar
                                                 </button>
-                                                <div class="modal fade" id="editar.problema" data-bs-backdrop="static"
+                                                <!-- Modal Problema 1 -->
+                                                <div class="modal fade" id="editarProblema1" data-bs-backdrop="static"
                                                     data-bs-keyboard="false" tabindex="-1"
-                                                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                    aria-labelledby="editarProblema1Label" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                                                                <h1 class="modal-title fs-5" id="editarProblema1Label">
                                                                     Atualização</h1>
                                                                 <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                Alterar descrição do problema: <input type="text"
-                                                                    class="form-control" id="validationServer01" value="Mais de 50% dos alunos de 2º ano concluíram o ano de 2024 classificados em níveis de
-                        proficiência em leitura de 'Não Leitor' e 'Sílabas' na avaliação de saída do SAEV." required>
+                                                                <label class="form-label">Descrição do problema</label>
+                                                                <input type="text" class="form-control"
+                                                                    value="Mais de 50% dos alunos de 2º ano concluíram o ano de 2024 classificados em níveis de proficiência em leitura de 'Não Leitor' e 'Sílabas' na avaliação de saída do SAEV."
+                                                                    required>
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-primary">Salvar
@@ -416,43 +452,38 @@
                             </div>
                             <!-- Desafio -->
                             <div class="col-md-6">
-                                <div class="card rounded-4 shadow-sm border-0 h-100" style="background: #f8fafc;">
+                                <div class="card rounded-4 shadow-sm border-0 h-100">
                                     <div class="card-body px-4 py-4 d-flex align-items-start">
                                         <div class="me-3 flex-shrink-0">
                                             <i class="bi bi-bullseye text-primary"
                                                 style="font-size: 2rem; opacity: .8;"></i>
                                         </div>
                                         <div>
-                                            <span
-                                                class="fw-bold text-uppercase text-secondary small mb-1 d-block">Desafio</span>
-                                            <div class="fw-semibold" style="font-size: 1.08rem; color: #334;">
+                                            <span class="fw-bold text-uppercase small mb-1 d-block">Desafio</span>
+                                            <div class="fw-semibold" style="font-size: 1.08rem;">
                                                 Metodologias tradicionais pouco atrativas, pouco estímulo à resolução de
-                                                problemas e
-                                                dificuldade de
-                                                abstração.
+                                                problemas e dificuldade de abstração.
                                                 <br>
                                                 <button type="button" class="badge rounded-pill text-bg-warning"
-                                                    data-bs-toggle="modal" data-bs-target="#editar.desafio">
+                                                    data-bs-toggle="modal" data-bs-target="#editarDesafio1">
                                                     Editar
                                                 </button>
-                                                <div class="modal fade" id="editar.desafio" data-bs-backdrop="static"
+                                                <!-- Modal Desafio 1 -->
+                                                <div class="modal fade" id="editarDesafio1" data-bs-backdrop="static"
                                                     data-bs-keyboard="false" tabindex="-1"
-                                                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                    aria-labelledby="editarDesafio1Label" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                                                                <h1 class="modal-title fs-5" id="editarDesafio1Label">
                                                                     Atualização</h1>
                                                                 <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                Alterar título do mapa de ação: <input type="text"
-                                                                    class="form-control" id="validationServer01"
-                                                                    value="Alfabetizando na Idade Certa" required>
-                                                                Alterar descrição do mapa de ação: <input type="text"
-                                                                    class="form-control" id="validationServer01"
-                                                                    value="Ação desenvolvida para fins de aumento na fluência leitora dos alunos de 1º e 2º ano da EMEF Sonho Lindo"
+                                                                <label class="form-label">Descrição do desafio</label>
+                                                                <input type="text" class="form-control"
+                                                                    value="Metodologias tradicionais pouco atrativas, pouco estímulo à resolução de problemas e dificuldade de abstração."
                                                                     required>
                                                             </div>
                                                             <div class="modal-footer">
@@ -472,38 +503,32 @@
                         </div>
 
                         <!-- Grid de campos principais -->
-                        <div class="card mb-0 rounded-4 shadow-md p-3 border-0" style="background: #f8fafc;">
+                        <div class="card mb-0 rounded-4 shadow-md p-3 border-0">
                             <form autocomplete="off">
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <label class="form-label">Data de Início</label>
-                                        <div class="input-icon">
-                                            <i class="bi bi-calendar3"></i>
-                                            <input type="date" class="form-control" value="2025-04-29">
-                                        </div>
+                                        <input type="date" class="form-control" value="2025-04-29">
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label">Data de Término</label>
-                                        <div class="input-icon">
-                                            <i class="bi bi-calendar3"></i>
-                                            <input type="date" class="form-control" value="2025-11-28">
-                                        </div>
+                                        <input type="date" class="form-control" value="2025-11-28">
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label">Componente Idebes Alfa</label>
                                         <select class="form-select">
                                             <option selected>-- selecione --</option>
-                                            <option value="1">Fluência Leitora</option>
-                                            <option value="2">Proficiência em Língua Portuguesa</option>
-                                            <option value="3">Proficiência em Matemática</option>
+                                            <option>Fluência Leitora</option>
+                                            <option>Proficiência em Língua Portuguesa</option>
+                                            <option>Proficiência em Matemática</option>
                                         </select>
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label">Componente Ideb</label>
                                         <select class="form-select">
                                             <option selected>-- selecione --</option>
-                                            <option value="1">Proficiência em Matemática</option>
-                                            <option value="2">Proficiência em Língua Portuguesa</option>
+                                            <option>Proficiência em Matemática</option>
+                                            <option>Proficiência em Língua Portuguesa</option>
                                         </select>
                                     </div>
                                     <div class="col-md-4">
@@ -530,31 +555,30 @@
                         </div>
                     </div><!-- Fim do bloco agrupado -->
 
-                    <!-- Card de tarefas (bloco separado) -->
-                    <div class="card mb-4 rounded-4 shadow-md border-0 p-4" style="background: #f8fafc;">
+                    <!-- Card de tarefas -->
+                    <div class="card mb-4 rounded-4 shadow-md border-0 p-4">
                         <div class="d-flex align-items-center mb-3">
                             <i class="bi bi-list-check card-icon text-primary me-2"></i>
                             <div>
                                 <span class="fs-4 fw-bold">Tarefas</span>
                             </div>
                             <button type="button" class="btn btn-primary ms-auto" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop">
+                                data-bs-target="#novaTarefa1">
                                 Cadastrar uma nova tarefa
                             </button>
                         </div>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <!-- Modal Nova Tarefa 1 -->
+                        <div class="modal fade" id="novaTarefa1" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="novaTarefa1Label" aria-hidden="true">
                             <div class="modal-dialog">
-                                <div class="modal-content">F
+                                <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Nova Tarefa</h1>
+                                        <h1 class="modal-title fs-5" id="novaTarefa1Label">Nova Tarefa</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <!-- aqui vão os campos do formulário -->
+                                        <!-- Campos do formulário -->
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
@@ -569,7 +593,6 @@
                         <!-- Tabela de tarefas -->
                         <div class="table-responsive">
                             <table class="table table-bordered align-middle mb-0">
-                                <!-- Removida a classe table-tasks -->
                                 <thead class="table-light">
                                     <tr>
                                         <th>Tarefa</th>
@@ -583,7 +606,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!-- Tarefa 1 -->
                                     <tr>
                                         <td>Produção do material</td>
                                         <td>Maria</td>
@@ -593,8 +615,9 @@
                                         <td>29-04-2025</td>
                                         <td>
                                             <span class="badge rounded-pill text-bg-warning">em andamento, com
-                                                atrasos</span><br> <span
-                                                class="badge rounded-pill text-bg-success">concluída no prazo</span><br>
+                                                atrasos</span><br>
+                                            <span class="badge rounded-pill text-bg-success">concluída no prazo</span>
+                                        </td>
                                         <td>
                                             <button type="button"
                                                 class="badge rounded-pill text-bg-warning border-0 mx-1">
@@ -606,21 +629,21 @@
                                             </button>
                                         </td>
                                     </tr>
-                                    <!-- Tarefa 2 -->
                                     <tr>
-                                        <td>Produção do material</td>
-                                        <td>Maria</td>
-                                        <td>17-02-2025</td>
-                                        <td>21-04-2025</td>
-                                        <td>29-04-2025</td>
-                                        <td>29-04-2025</td>
+                                        <td>Planejamento de aula</td>
+                                        <td>Carlos</td>
+                                        <td>20-05-2025</td>
+                                        <td>25-06-2025</td>
+                                        <td>---</td>
+                                        <td>---</td>
                                         <td>
                                             <span class="badge rounded-pill text-bg-secondary">tarefa
                                                 prevista</span><br>
                                             <span class="badge rounded-pill text-bg-danger">tarefa prevista e não
                                                 iniciada</span><br>
                                             <span class="badge rounded-pill text-bg-primary">em andamento, no
-                                                prazo</span><br>
+                                                prazo</span>
+                                        </td>
                                         <td>
                                             <button type="button"
                                                 class="badge rounded-pill text-bg-warning border-0 mx-1">
@@ -636,55 +659,49 @@
                             </table>
                         </div>
                     </div>
-                </div><!-- Fim da Aba 1 -->
+                </div>
 
-                <!-- ===========================================
-        ABA 2: Basta copiar TODO o conteúdo da Aba 1 acima,
-        colar dentro de <div class="tab-pane ... id="mapa2" ...>
-        e adaptar o conteúdo conforme o novo mapa de ação!
-        ============================================ -->
-                <div class="tab-pane fade" id="mapa2" role="tabpanel" aria-labelledby="mapa1-tab">
-                    <!-- Todo o conteúdo do MAPA 2 aqui -->
-                    <!-- Bloco agrupado: Ação + problemas/desafios/dias + dados principais -->
-                    <div class="bg-soft rounded-4 shadow-sm p-4 mb-4">
+                <!-- ================== ABA 2 ================== -->
+                <div class="tab-pane fade" id="mapa2" role="tabpanel" aria-labelledby="mapa2-tab">
+
+                    <div class="bg-body rounded-4 shadow-sm p-4 mb-4">
 
                         <!-- Card da ação -->
-                        <div class="card mb-4 rounded-4 border-0 shadow-sm" style="background: #f8fafc;">
+                        <div class="card mb-4 rounded-4 border-0 shadow-sm">
                             <div class="card-body px-5 py-4">
                                 <div class="d-flex align-items-center mb-2">
                                     <div>
-                                        <span class="fw-bold text-uppercase text-secondary small">Mapa de Ação</span>
+                                        <span class="fw-bold text-uppercase small">Mapa de Ação</span>
                                         <h3 class="fw-bold mb-1" style="letter-spacing: -.5px;">Matematicando</h3>
                                     </div>
                                 </div>
-                                <p class="text-secondary mt-3 mb-2" style="font-size: 1.07rem;">
-                                    Ação desenvolvida para fins de aumento na fluência leitora dos alunos de 1º e 2º ano
-                                    da EMEF Sonho
-                                    Lindo
+                                <p class="mt-3 mb-2" style="font-size: 1.07rem;">
+                                    Ação voltada para o desenvolvimento do pensamento lógico e resolução de problemas
+                                    matemáticos nos anos iniciais.
                                 </p>
                                 <div>
                                     <button type="button" class="badge rounded-pill text-bg-warning"
-                                        data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        data-bs-toggle="modal" data-bs-target="#editarMapa2">
                                         Editar
                                     </button>
-                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                    <!-- Modal Edição Mapa 2 -->
+                                    <div class="modal fade" id="editarMapa2" data-bs-backdrop="static"
+                                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="editarMapa2Label"
                                         aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Atualização
-                                                    </h1>
+                                                    <h1 class="modal-title fs-5" id="editarMapa2Label">Atualização</h1>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    Alterar título do mapa de ação: <input type="text"
-                                                        class="form-control" id="validationServer01"
-                                                        value="Alfabetizando na Idade Certa" required>
-                                                    Alterar descrição do mapa de ação: <input type="text"
-                                                        class="form-control" id="validationServer01"
-                                                        value="Ação desenvolvida para fins de aumento na fluência leitora dos alunos de 1º e 2º ano da EMEF Sonho Lindo"
+                                                    <label class="form-label">Título do mapa de ação</label>
+                                                    <input type="text" class="form-control mb-2" value="Matematicando"
+                                                        required>
+                                                    <label class="form-label">Descrição do mapa de ação</label>
+                                                    <input type="text" class="form-control"
+                                                        value="Ação voltada para o desenvolvimento do pensamento lógico e resolução de problemas matemáticos nos anos iniciais."
                                                         required>
                                                 </div>
                                                 <div class="modal-footer">
@@ -700,44 +717,43 @@
                             </div>
                         </div>
 
-                        <!-- Bloco de problemas, desafios e dias após o início -->
+                        <!-- Problema e desafio -->
                         <div class="row g-4 mb-4">
                             <!-- Problema -->
                             <div class="col-md-6">
-                                <div class="card rounded-4 shadow-sm border-0 h-100" style="background: #f8fafc;">
+                                <div class="card rounded-4 shadow-sm border-0 h-100">
                                     <div class="card-body px-4 py-4 d-flex align-items-start">
                                         <div class="me-3 flex-shrink-0">
                                             <i class="bi bi-exclamation-triangle-fill text-danger"
                                                 style="font-size: 2rem; opacity: .85;"></i>
                                         </div>
                                         <div>
-                                            <span
-                                                class="fw-bold text-uppercase text-secondary small mb-1 d-block">Problema</span>
-                                            <div class="fw-semibold" style="font-size: 1.08rem; color: #334;">
-                                                Mais de 50% dos alunos de 2º ano concluíram o ano de 2024 classificados
-                                                em níveis de
-                                                proficiência em
-                                                leitura de "Não Leitor" e "Sílabas" na avaliação de saída do SAEV.
+                                            <span class="fw-bold text-uppercase small mb-1 d-block">Problema</span>
+                                            <div class="fw-semibold" style="font-size: 1.08rem;">
+                                                Baixo desempenho em resolução de problemas e dificuldades de raciocínio
+                                                matemático evidenciados em avaliações externas.
                                                 <br>
                                                 <button type="button" class="badge rounded-pill text-bg-warning"
-                                                    data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                    data-bs-toggle="modal" data-bs-target="#editarProblema2">
                                                     Editar
                                                 </button>
-                                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                                <!-- Modal Problema 2 -->
+                                                <div class="modal fade" id="editarProblema2" data-bs-backdrop="static"
                                                     data-bs-keyboard="false" tabindex="-1"
-                                                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                    aria-labelledby="editarProblema2Label" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                                                                <h1 class="modal-title fs-5" id="editarProblema2Label">
                                                                     Atualização</h1>
                                                                 <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                Alterar descrição do problema: <input type="text"
-                                                                    class="form-control" id="validationServer01" value="Mais de 50% dos alunos de 2º ano concluíram o ano de 2024 classificados em níveis de
-                        proficiência em leitura de 'Não Leitor' e 'Sílabas' na avaliação de saída do SAEV." required>
+                                                                <label class="form-label">Descrição do problema</label>
+                                                                <input type="text" class="form-control"
+                                                                    value="Baixo desempenho em resolução de problemas e dificuldades de raciocínio matemático evidenciados em avaliações externas."
+                                                                    required>
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-primary">Salvar
@@ -755,43 +771,38 @@
                             </div>
                             <!-- Desafio -->
                             <div class="col-md-6">
-                                <div class="card rounded-4 shadow-sm border-0 h-100" style="background: #f8fafc;">
+                                <div class="card rounded-4 shadow-sm border-0 h-100">
                                     <div class="card-body px-4 py-4 d-flex align-items-start">
                                         <div class="me-3 flex-shrink-0">
                                             <i class="bi bi-bullseye text-primary"
                                                 style="font-size: 2rem; opacity: .8;"></i>
                                         </div>
                                         <div>
-                                            <span
-                                                class="fw-bold text-uppercase text-secondary small mb-1 d-block">Desafio</span>
-                                            <div class="fw-semibold" style="font-size: 1.08rem; color: #334;">
-                                                Metodologias tradicionais pouco atrativas, pouco estímulo à resolução de
-                                                problemas e
-                                                dificuldade de
-                                                abstração.
+                                            <span class="fw-bold text-uppercase small mb-1 d-block">Desafio</span>
+                                            <div class="fw-semibold" style="font-size: 1.08rem;">
+                                                Engajar alunos e professores em metodologias ativas que favoreçam a
+                                                construção do raciocínio matemático.
                                                 <br>
                                                 <button type="button" class="badge rounded-pill text-bg-warning"
-                                                    data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                    data-bs-toggle="modal" data-bs-target="#editarDesafio2">
                                                     Editar
                                                 </button>
-                                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                                <!-- Modal Desafio 2 -->
+                                                <div class="modal fade" id="editarDesafio2" data-bs-backdrop="static"
                                                     data-bs-keyboard="false" tabindex="-1"
-                                                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                    aria-labelledby="editarDesafio2Label" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                                                                <h1 class="modal-title fs-5" id="editarDesafio2Label">
                                                                     Atualização</h1>
                                                                 <button type="button" class="btn-close"
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                Alterar título do mapa de ação: <input type="text"
-                                                                    class="form-control" id="validationServer01"
-                                                                    value="Alfabetizando na Idade Certa" required>
-                                                                Alterar descrição do mapa de ação: <input type="text"
-                                                                    class="form-control" id="validationServer01"
-                                                                    value="Ação desenvolvida para fins de aumento na fluência leitora dos alunos de 1º e 2º ano da EMEF Sonho Lindo"
+                                                                <label class="form-label">Descrição do desafio</label>
+                                                                <input type="text" class="form-control"
+                                                                    value="Engajar alunos e professores em metodologias ativas que favoreçam a construção do raciocínio matemático."
                                                                     required>
                                                             </div>
                                                             <div class="modal-footer">
@@ -811,89 +822,81 @@
                         </div>
 
                         <!-- Grid de campos principais -->
-                        <div class="card mb-0 rounded-4 shadow-md p-3 border-0" style="background: #f8fafc;">
+                        <div class="card mb-0 rounded-4 shadow-md p-3 border-0">
                             <form autocomplete="off">
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <label class="form-label">Data de Início</label>
-                                        <div class="input-icon">
-                                            <i class="bi bi-calendar3"></i>
-                                            <input type="date" class="form-control" value="2025-04-29">
-                                        </div>
+                                        <input type="date" class="form-control" value="2025-04-29">
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label">Data de Término</label>
-                                        <div class="input-icon">
-                                            <i class="bi bi-calendar3"></i>
-                                            <input type="date" class="form-control" value="2025-11-28">
-                                        </div>
+                                        <input type="date" class="form-control" value="2025-11-28">
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label">Componente Idebes Alfa</label>
                                         <select class="form-select">
                                             <option selected>-- selecione --</option>
-                                            <option value="1">Fluência Leitora</option>
-                                            <option value="2">Proficiência em Língua Portuguesa</option>
-                                            <option value="3">Proficiência em Matemática</option>
+                                            <option>Fluência Leitora</option>
+                                            <option>Proficiência em Língua Portuguesa</option>
+                                            <option>Proficiência em Matemática</option>
                                         </select>
                                     </div>
                                     <div class="col-md-6">
                                         <label class="form-label">Componente Ideb</label>
                                         <select class="form-select">
                                             <option selected>-- selecione --</option>
-                                            <option value="1">Proficiência em Matemática</option>
-                                            <option value="2">Proficiência em Língua Portuguesa</option>
+                                            <option>Proficiência em Matemática</option>
+                                            <option>Proficiência em Língua Portuguesa</option>
                                         </select>
                                     </div>
                                     <div class="col-md-4">
                                         <label class="form-label">Nome da Ação</label>
-                                        <input type="text" class="form-control"
-                                            value="Alfabetizando com utilização de TIC's">
+                                        <input type="text" class="form-control" value="Matematicando em ação">
                                     </div>
                                     <div class="col-md-4">
                                         <label class="form-label">Responsável</label>
-                                        <input type="text" class="form-control" value="José Valério">
+                                        <input type="text" class="form-control" value="Aline Silva">
                                     </div>
                                     <div class="col-md-4">
                                         <label class="form-label">Público-Alvo</label>
                                         <input type="text" class="form-control"
-                                            value="1ª e 2ª séries do turno matutino">
+                                            value="2ª e 3ª séries do turno matutino">
                                     </div>
                                     <div class="col-md-12">
                                         <label class="form-label">Resultado esperado (mensurável)</label>
                                         <input type="text" class="form-control"
-                                            value="Aumentar em no mínimo 10% a taxa de proficiência em Língua Portuguesa e Matemática no comparativo dos resultados entre o primeiro e o último simulado.">
+                                            value="Reduzir em 20% o percentual de alunos em níveis críticos de desempenho matemático ao final do ciclo.">
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div><!-- Fim do bloco agrupado -->
 
-                    <!-- Card de tarefas (bloco separado) -->
-                    <div class="card mb-4 rounded-4 shadow-md border-0 p-4" style="background: #f8fafc;">
+                    <!-- Card de tarefas -->
+                    <div class="card mb-4 rounded-4 shadow-md border-0 p-4">
                         <div class="d-flex align-items-center mb-3">
                             <i class="bi bi-list-check card-icon text-primary me-2"></i>
                             <div>
                                 <span class="fs-4 fw-bold">Tarefas</span>
                             </div>
                             <button type="button" class="btn btn-primary ms-auto" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop">
+                                data-bs-target="#novaTarefa2">
                                 Cadastrar uma nova tarefa
                             </button>
                         </div>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <!-- Modal Nova Tarefa 2 -->
+                        <div class="modal fade" id="novaTarefa2" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="novaTarefa2Label" aria-hidden="true">
                             <div class="modal-dialog">
-                                <div class="modal-content">F
+                                <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Nova Tarefa</h1>
+                                        <h1 class="modal-title fs-5" id="novaTarefa2Label">Nova Tarefa</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <!-- aqui vão os campos do formulário -->
+                                        <!-- Campos do formulário -->
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
@@ -908,7 +911,6 @@
                         <!-- Tabela de tarefas -->
                         <div class="table-responsive">
                             <table class="table table-bordered align-middle mb-0">
-                                <!-- Removida a classe table-tasks -->
                                 <thead class="table-light">
                                     <tr>
                                         <th>Tarefa</th>
@@ -922,18 +924,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!-- Tarefa 1 -->
                                     <tr>
-                                        <td>Produção do material</td>
-                                        <td>Maria</td>
-                                        <td>17-02-2025</td>
-                                        <td>21-04-2025</td>
-                                        <td>29-04-2025</td>
-                                        <td>29-04-2025</td>
+                                        <td>Aplicação de simulados</td>
+                                        <td>Aline Silva</td>
+                                        <td>10-03-2025</td>
+                                        <td>10-04-2025</td>
+                                        <td>---</td>
+                                        <td>---</td>
                                         <td>
-                                            <span class="badge rounded-pill text-bg-warning">em andamento, com
-                                                atrasos</span><br> <span
-                                                class="badge rounded-pill text-bg-success">concluída no prazo</span><br>
+                                            <span class="badge rounded-pill text-bg-primary">tarefa prevista</span>
+                                        </td>
                                         <td>
                                             <button type="button"
                                                 class="badge rounded-pill text-bg-warning border-0 mx-1">
@@ -945,21 +945,16 @@
                                             </button>
                                         </td>
                                     </tr>
-                                    <!-- Tarefa 2 -->
                                     <tr>
-                                        <td>Produção do material</td>
-                                        <td>Maria</td>
-                                        <td>17-02-2025</td>
-                                        <td>21-04-2025</td>
-                                        <td>29-04-2025</td>
-                                        <td>29-04-2025</td>
+                                        <td>Oficina de matemática</td>
+                                        <td>Aline Silva</td>
+                                        <td>15-04-2025</td>
+                                        <td>30-06-2025</td>
+                                        <td>---</td>
+                                        <td>---</td>
                                         <td>
-                                            <span class="badge rounded-pill text-bg-secondary">tarefa
-                                                prevista</span><br>
-                                            <span class="badge rounded-pill text-bg-danger">tarefa prevista e não
-                                                iniciada</span><br>
-                                            <span class="badge rounded-pill text-bg-primary">em andamento, no
-                                                prazo</span><br>
+                                            <span class="badge rounded-pill text-bg-secondary">em andamento</span>
+                                        </td>
                                         <td>
                                             <button type="button"
                                                 class="badge rounded-pill text-bg-warning border-0 mx-1">
@@ -975,13 +970,15 @@
                             </table>
                         </div>
                     </div>
-                </div><!-- Fim da Aba 2 -->
+                </div>
             </div>
+        </div>
 
-            <!-- Fim do Conteúdo-->
 
-            <script src="assets/dist/js/bootstrap.bundle.min.js" class="astro-vvvwv3sm"></script>
-            <script src="assets/dist/js/sidebars.js" class="astro-vvvwv3sm"></script>
+        <!-- Fim do Conteúdo-->
+
+        <script src="assets/dist/js/bootstrap.bundle.min.js" class="astro-vvvwv3sm"></script>
+        <script src="assets/dist/js/sidebars.js" class="astro-vvvwv3sm"></script>
 </body>
 
 </html>

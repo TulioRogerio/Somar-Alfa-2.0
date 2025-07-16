@@ -400,51 +400,39 @@
                     <div class="col-12 col-md-6 col-xl-6">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
-                                <div class="card-title fw-bold text-center"> <i
-                                        class="bi bi-clock-history me-2 text-warning"></i>
-                                    Tarefas com data de vencimento próximas</div>
-                                <!-- Lista de tarefas ou gráfico -->
-                                <ul class="list-group list-group-flush">
-                                    <!-- Exemplo de item de tarefa -->
+                                <div class="card-title fw-bold text-center mb-2">
+                                    <i class="bi bi-clock-history me-2 text-warning"></i>
+                                    Tarefas com data de vencimento próximas
+                                </div>
+                                <ul class="list-group list-group-flush mb-3">
                                     <li
                                         class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
-                                        <div>
-                                            <span class="fw-semibold">Produção do material</span>
-                                            <span class="text-muted small ms-2">(Maria)</span>
-                                        </div>
-                                        <div>
-                                            <span class="badge rounded-pill bg-warning text-dark me-2">
-                                                18/07/2025
-                                            </span>
-                                            <span class="badge bg-secondary small">2 dias</span>
-                                        </div>
+                                        <span class="fw-semibold">Ação do material <span
+                                                class="text-muted small">(Maria)</span></span>
+                                        <span>
+                                            <span class="badge rounded-pill bg-warning text-dark me-1">18/07/2025</span>
+                                            <span class="badge bg-secondary">2 dias</span>
+                                        </span>
                                     </li>
                                     <li
                                         class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
-                                        <div>
-                                            <span class="fw-semibold">Planejamento de aula</span>
-                                            <span class="text-muted small ms-2">(Carlos)</span>
-                                        </div>
-                                        <div>
-                                            <span class="badge rounded-pill bg-danger me-2">
-                                                16/07/2025
-                                            </span>
-                                            <span class="badge bg-danger small">Vence hoje!</span>
-                                        </div>
+                                        <span class="fw-semibold">Planejamento de aula <span
+                                                class="text-muted small">(Carlos)</span></span>
+                                        <span>
+                                            <span class="badge rounded-pill bg-danger me-1">16/07/2025</span>
+                                            <span class="badge bg-danger">Vence hoje!</span>
+                                        </span>
                                     </li>
                                     <li
                                         class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
-                                        <div>
-                                            <span class="fw-semibold">Enviar relatório</span>
-                                            <span class="text-muted small ms-2">(Ana)</span>
-                                        </div>
-                                        <div>
-                                            <span class="badge rounded-pill bg-warning text-dark me-2">
-                                                20/07/2025
-                                            </span>
-                                            <span class="badge bg-secondary small">5 dias</span>
-                                        </div>
+                                        <span class="fw-semibold">Enviar relatório <span
+                                                class="text-muted small">(Ana)</span></span>
+                                        <span>
+                                            <span class="badge rounded-pill bg-warning text-dark me-1">20/07/2025</span>
+                                            <span class="badge bg-secondary">5 dias</span>
+                                        </span>
                                     </li>
+                                    <!-- Adicione outras tarefas aqui -->
                                 </ul>
                                 <div class="mt-3 text-end">
                                     <a href="#" class="btn btn-sm btn-outline-primary">Ver todas as tarefas</a>
@@ -452,6 +440,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-12 col-md-6 col-xl-6">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
@@ -529,13 +518,10 @@
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
                                 <div class="card-title fw-bold text-center">Visitas Técnicas</div>
-                                <!-- Lista ou gráfico -->
                                 <div class="small">
                                     <!-- CICLO I -->
-                                    <div class="mb-2 p-2 rounded"
-                                        style="background: #fff7e0; border: 1px solid #ffe599;">
-                                        <div class="fw-semibold text-warning mb-2" style="font-size: 1.05em;">Ciclo I
-                                        </div>
+                                    <div class="p-3 mb-3 bg-warning-subtle border border-warning rounded-3">
+                                        <div class="fw-semibold text-warning mb-2">Ciclo I</div>
                                         <ul class="list-unstyled mb-0">
                                             <li
                                                 class="d-flex justify-content-between align-items-center py-1 border-bottom">
@@ -602,10 +588,8 @@
                                     </div>
 
                                     <!-- CICLO II -->
-                                    <div class="mb-2 p-2 rounded"
-                                        style="background: #e6f6fb; border: 1px solid #99d3df;">
-                                        <div class="fw-semibold text-info mb-2" style="font-size: 1.05em;">Ciclo II
-                                        </div>
+                                    <div class="p-3 mb-3 bg-info-subtle border border-info rounded-3">
+                                        <div class="fw-semibold text-info mb-2">Ciclo II</div>
                                         <ul class="list-unstyled mb-0">
                                             <li
                                                 class="d-flex justify-content-between align-items-center py-1 border-bottom">
@@ -644,9 +628,8 @@
                                     </div>
 
                                     <!-- CICLO III -->
-                                    <div class="p-2 rounded" style="background: #e8f5e9; border: 1px solid #b5e5c1;">
-                                        <div class="fw-semibold text-success mb-2" style="font-size: 1.05em;">Ciclo III
-                                        </div>
+                                    <div class="p-3 bg-success-subtle border border-success rounded-3">
+                                        <div class="fw-semibold text-success mb-2">Ciclo III</div>
                                         <ul class="list-unstyled mb-0">
                                             <li
                                                 class="d-flex justify-content-between align-items-center py-1 border-bottom">
@@ -666,14 +649,10 @@
                                             </li>
                                         </ul>
                                     </div>
-
                                 </div>
                                 <div class="mt-3 text-end">
                                     <a href="#" class="btn btn-sm btn-outline-primary">Acessar detalhes dos ciclos</a>
                                 </div>
-
-
-
                             </div>
                         </div>
                     </div>
@@ -699,6 +678,7 @@
                     </div>
                 </div>
 
+                <!-- Linha 5: Plano de Ação, Tarefas e Teste de Consistência -->
                 <div class="row g-3 mb-3">
                     <div class="col-12 col-md-4">
                         <!-- Mapas -->
@@ -1237,315 +1217,305 @@
 
 
 
-                <!-- Linha 5: Plano | Mapas | Tarefas -->
-                <div class="row g-3 mb-3">
-                    <div class="col-12 col-md-4">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-body text-center">
-                                <div class="card-title fw-bold">Plano</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-body text-center">
-                                <div class="card-title fw-bold">Mapas</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-body text-center">
-                                <div class="card-title fw-bold">Tarefas</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Linha 6: Teste de Consistência | Produtos -->
-                <div class="row g-3 mb-3">
-                    <div class="col-12 col-md-6">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-body text-center">
-                                <div class="card-title fw-bold">Teste de consistência</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-body text-center">
-                                <div class="card-title fw-bold">Produtos</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                <!-- Fim do Conteúdo - -->
             </div>
+            <script src="assets/dist/js/bootstrap.bundle.min.js" class="astro-vvvwv3sm"></script>
+            <script src="assets/dist/js/sidebars.js" class="astro-vvvwv3sm"></script>
+            <script>
+                ClassicEditor.create(document.querySelector('#participantes'), {
+                    language: 'pt'
+                }).catch(error => { console.error(error); });
+                ClassicEditor.create(document.querySelector('#topicos'), {
+                    language: 'pt'
+                }).catch(error => { console.error(error); });
+                ClassicEditor.create(document.querySelector('#ataVisita'), {
+                    language: 'pt'
+                }).catch(error => { console.error(error); });
+            </script>
 
-            <!-- Fim do Conteúdo - -->
-        </div>
-        <script src="assets/dist/js/bootstrap.bundle.min.js" class="astro-vvvwv3sm"></script>
-        <script src="assets/dist/js/sidebars.js" class="astro-vvvwv3sm"></script>
-        <script>
-            ClassicEditor.create(document.querySelector('#participantes'), {
-                language: 'pt'
-            }).catch(error => { console.error(error); });
-            ClassicEditor.create(document.querySelector('#topicos'), {
-                language: 'pt'
-            }).catch(error => { console.error(error); });
-            ClassicEditor.create(document.querySelector('#ataVisita'), {
-                language: 'pt'
-            }).catch(error => { console.error(error); });
-        </script>
+            <script>
+                function criarGrafico(id, label, dados, cor) {
+                    const ctx = document.getElementById(id);
+                    if (Chart.getChart(ctx)) {
+                        Chart.getChart(ctx).destroy();
+                    }
 
-        <script>
-            function criarGrafico(id, label, dados, cor) {
-                const ctx = document.getElementById(id);
-                if (Chart.getChart(ctx)) {
-                    Chart.getChart(ctx).destroy();
+                    new Chart(ctx, {
+                        type: "line",
+                        data: {
+                            labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
+                            datasets: [{
+                                label: label,
+                                data: dados,
+                                borderColor: cor,
+                                backgroundColor: cor + "33", // Transparência
+                                fill: true,
+                                tension: 0.4
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: { beginAtZero: true }
+                            }
+                        }
+                    });
                 }
 
-                new Chart(ctx, {
-                    type: "line",
-                    data: {
-                        labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun"],
-                        datasets: [{
-                            label: label,
-                            data: dados,
-                            borderColor: cor,
-                            backgroundColor: cor + "33", // Transparência
-                            fill: true,
-                            tension: 0.4
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        scales: {
-                            y: { beginAtZero: true }
-                        }
-                    }
+                document.addEventListener("DOMContentLoaded", function () {
+                    criarGrafico("graficoLinha", "IDEB", [10, 30, 20, 50, 60, 70], "#0d6efd");
+                    criarGrafico("graficoLinha2", "IDEB - Metas", [5, 15, 25, 35, 45, 55], "#198754");
+                    criarGrafico("graficoLinha3", "IDEBES", [18, 28, 36, 42, 51, 67], "#fd7e14");
+                    criarGrafico("graficoLinha4", "IDEBES - Metas", [8, 17, 34, 40, 58, 66], "#dc3545");
                 });
+            </script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var calendarEl = document.getElementById('calendario');
+                    var calendar = new FullCalendar.Calendar(calendarEl, {
+                        height: 500,
+                        themeSystem: 'bootstrap5',
+                        initialView: 'dayGridMonth',
+                        locale: 'pt-br',  // OU 'ptBr'
+                        buttonText: {
+                            today: 'Hoje',
+                            month: 'Mês',
+                            week: 'Semana',
+                            day: 'Dia',
+                            list: 'Lista'
+                        },
+                        headerToolbar: {
+                            left: 'prev,next today',
+                            center: 'title',
+                            right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+                        },
+                        events: [
+                            {
+                                title: 'Reunião de Fluxo S',
+                                start: '2025-06-30T13:00:00'
+                            },
+                            {
+                                title: 'Reunião de alinhamento',
+                                start: '2025-07-10T09:00:00'
+                            },
+                            {
+                                title: '2ª Capacitação: Fluência',
+                                start: '2025-07-30T08:00:00'
+                            }
+                        ],
+                        eventTimeFormat: {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            hour12: false
+                        }
+                    });
+                    calendar.render();
+                });
+            </script>
+
+            <!-- FullCalendar -->
+            <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/bootstrap5.global.min.js"></script>
+
+<script>
+    // Função simples de troca de tema para testes
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+    // Variáveis globais Chart.js
+    let chart1, chart2;
+
+    function renderCharts() {
+        const theme = document.documentElement.getAttribute('data-bs-theme') || 'light';
+
+        // Cores dinâmicas baseadas no tema
+        const chartBg   = (theme === 'dark') ? '#222b35' : '#fff';
+        const textColor = (theme === 'dark') ? '#fff'    : '#222';
+        const gridColor = (theme === 'dark') ? '#3c4653' : '#e5e5e5';
+
+        // Labels comuns
+        const labels = [
+            '03', '04', '05', '06', '07',
+            '10', '11', '12', '13', '14',
+            '17', '18', '19', '20', '21',
+            '24', '25', '26', '27', '28'
+        ];
+
+        // Gráfico 1
+        const data1 = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Aulas Dadas de L. Portuguesa',
+                    data: [5, 4, 5, 4, 5, 6, 5, 5, 5, 6, 4, 5, 6, 5, 4, 5, 5, 4, 5, 6],
+                    backgroundColor: '#6b168c',
+                    borderRadius: 4
+                },
+                {
+                    label: 'Aulas Dadas de Matemática',
+                    data: [3, 3, 4, 4, 3, 4, 3, 4, 4, 3, 3, 4, 3, 3, 4, 3, 4, 3, 4, 4],
+                    backgroundColor: '#f27c24',
+                    borderRadius: 4
+                },
+                {
+                    label: 'Aulas Previstas de L. Portuguesa',
+                    data: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+                    type: 'line',
+                    borderColor: '#be63d6',
+                    backgroundColor: '#be63d6',
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0.25,
+                    pointRadius: 2,
+                    pointHoverRadius: 4
+                },
+                {
+                    label: 'Aulas Previstas de Matemática',
+                    data: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+                    type: 'line',
+                    borderColor: '#f5a492',
+                    backgroundColor: '#f5a492',
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0.25,
+                    pointRadius: 2,
+                    pointHoverRadius: 4
+                }
+            ]
+        };
+
+        // Gráfico 2
+        const data2 = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Faltas em L. Portuguesa',
+                    data: [2, 3, 3, 2, 3, 4, 3, 2, 4, 3, 2, 3, 4, 3, 3, 4, 3, 2, 3, 2],
+                    backgroundColor: '#157347',
+                    borderRadius: 4
+                },
+                {
+                    label: 'Faltas em Matemática',
+                    data: [1, 2, 1, 2, 2, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2],
+                    backgroundColor: '#0dcaf0',
+                    borderRadius: 4
+                },
+                {
+                    label: 'Alunos faltosos em L. Portuguesa',
+                    data: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+                    type: 'line',
+                    borderColor: '#28a745',
+                    backgroundColor: '#28a745',
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0.25,
+                    pointRadius: 2,
+                    pointHoverRadius: 4
+                },
+                {
+                    label: 'Alunos faltosos em Matemática',
+                    data: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+                    type: 'line',
+                    borderColor: '#ffc107',
+                    backgroundColor: '#ffc107',
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0.25,
+                    pointRadius: 2,
+                    pointHoverRadius: 4
+                }
+            ]
+        };
+
+        // Função de opções comuns
+        function commonOptions(mainTitle, textColor, gridColor) {
+            return {
+                responsive: true,
+                aspectRatio: 2.6,
+                plugins: {
+                    legend: { position: 'bottom', labels: { color: textColor } },
+                    title: {
+                        display: true,
+                        text: [
+                            mainTitle,
+                            'Município: Colatina - Junho de 2024'
+                        ],
+                        font: { size: 18, weight: 'bold' },
+                        color: textColor,
+                        padding: { top: 10, bottom: 5 }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { color: gridColor },
+                        ticks: { color: textColor },
+                        title: {
+                            display: true,
+                            text: 'Dias letivos do mês de junho de 2025',
+                            font: { size: 14 },
+                            color: textColor
+                        }
+                    },
+                    y: {
+                        grid: { color: gridColor },
+                        ticks: { color: textColor },
+                        beginAtZero: true
+                    }
+                },
+                layout: { padding: 0 }
+            };
+        }
+
+        // Plugin para fundo
+        function chartBgPlugin(chartBg) {
+            return {
+                id: 'customCanvasBackgroundColor',
+                beforeDraw: (chart) => {
+                    const ctx = chart.ctx;
+                    ctx.save();
+                    ctx.globalCompositeOperation = 'destination-over';
+                    ctx.fillStyle = chartBg;
+                    ctx.fillRect(0, 0, chart.width, chart.height);
+                    ctx.restore();
+                }
+            };
+        }
+
+        // Destroi gráficos antigos, se existirem
+        if (chart1) chart1.destroy();
+        if (chart2) chart2.destroy();
+
+        // Cria gráficos com as opções e plugin do fundo
+        chart1 = new Chart(document.getElementById('graficoAulas1'), {
+            type: 'bar',
+            data: data1,
+            options: commonOptions('Aulas dadas e aulas previstas', textColor, gridColor),
+            plugins: [chartBgPlugin(chartBg)]
+        });
+        chart2 = new Chart(document.getElementById('graficoAulas2'), {
+            type: 'bar',
+            data: data2,
+            options: commonOptions('Faltas e alunos faltosos', textColor, gridColor),
+            plugins: [chartBgPlugin(chartBg)]
+        });
+    }
+
+    // Observer para mudanças no atributo de tema
+    const observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            if (mutation.type === "attributes" && mutation.attributeName === "data-bs-theme") {
+                renderCharts();
             }
+        });
+    });
+    observer.observe(document.documentElement, { attributes: true });
 
-            document.addEventListener("DOMContentLoaded", function () {
-                criarGrafico("graficoLinha", "IDEB", [10, 30, 20, 50, 60, 70], "#0d6efd");
-                criarGrafico("graficoLinha2", "IDEB - Metas", [5, 15, 25, 35, 45, 55], "#198754");
-                criarGrafico("graficoLinha3", "IDEBES", [18, 28, 36, 42, 51, 67], "#fd7e14");
-                criarGrafico("graficoLinha4", "IDEBES - Metas", [8, 17, 34, 40, 58, 66], "#dc3545");
-            });
-        </script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var calendarEl = document.getElementById('calendario');
-                var calendar = new FullCalendar.Calendar(calendarEl, {
-                    height: 500,
-                    themeSystem: 'bootstrap5',
-                    initialView: 'dayGridMonth',
-                    locale: 'pt-br',  // OU 'ptBr'
-                    buttonText: {
-                        today: 'Hoje',
-                        month: 'Mês',
-                        week: 'Semana',
-                        day: 'Dia',
-                        list: 'Lista'
-                    },
-                    headerToolbar: {
-                        left: 'prev,next today',
-                        center: 'title',
-                        right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-                    },
-                    events: [
-                        {
-                            title: 'Reunião de Fluxo S',
-                            start: '2025-06-30T13:00:00'
-                        },
-                        {
-                            title: 'Reunião de alinhamento',
-                            start: '2025-07-10T09:00:00'
-                        },
-                        {
-                            title: '2ª Capacitação: Fluência',
-                            start: '2025-07-30T08:00:00'
-                        }
-                    ],
-                    eventTimeFormat: {
-                        hour: '2-digit',
-                        minute: '2-digit',
-                        hour12: false
-                    }
-                });
-                calendar.render();
-            });
-        </script>
+    // Renderiza na primeira carga
+    document.addEventListener('DOMContentLoaded', renderCharts);
 
-        <!-- FullCalendar -->
-        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/bootstrap5.global.min.js"></script>
-
-        <script>
-            // --- Configuração dos labels comuns ---
-            const labels = [
-                '03', '04', '05', '06', '07',
-                '10', '11', '12', '13', '14',
-                '17', '18', '19', '20', '21',
-                '24', '25', '26', '27', '28'
-            ];
-
-            // --- Gráfico 1: Colatina ---
-            const data1 = {
-                labels: labels,
-                datasets: [
-                    {
-                        label: 'Aulas Dadas de L. Portuguesa',
-                        data: [5, 4, 5, 4, 5, 6, 5, 5, 5, 6, 4, 5, 6, 5, 4, 5, 5, 4, 5, 6],
-                        backgroundColor: '#6b168c', // Roxo escuro
-                        borderRadius: 4
-                    },
-                    {
-                        label: 'Aulas Dadas de Matemática',
-                        data: [3, 3, 4, 4, 3, 4, 3, 4, 4, 3, 3, 4, 3, 3, 4, 3, 4, 3, 4, 4],
-                        backgroundColor: '#f27c24', // Laranja
-                        borderRadius: 4
-                    },
-                    {
-                        label: 'Aulas Previstas de L. Portuguesa',
-                        data: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
-                        type: 'line',
-                        borderColor: '#be63d6',
-                        backgroundColor: '#be63d6',
-                        borderWidth: 2,
-                        fill: false,
-                        tension: 0.25,
-                        pointRadius: 2,
-                        pointHoverRadius: 4
-                    },
-                    {
-                        label: 'Aulas Previstas de Matemática',
-                        data: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-                        type: 'line',
-                        borderColor: '#f5a492',
-                        backgroundColor: '#f5a492',
-                        borderWidth: 2,
-                        fill: false,
-                        tension: 0.25,
-                        pointRadius: 2,
-                        pointHoverRadius: 4
-                    }
-                ]
-            };
-
-            // --- Gráfico 2: Linhares (exemplo com novas cores/legendas) ---
-            const data2 = {
-                labels: labels,
-                datasets: [
-                    {
-                        label: 'Faltas em L. Portuguesa',
-                        data: [2, 3, 3, 2, 3, 4, 3, 2, 4, 3, 2, 3, 4, 3, 3, 4, 3, 2, 3, 2],
-                        backgroundColor: '#157347', // Verde escuro
-                        borderRadius: 4
-                    },
-                    {
-                        label: 'Faltas em Matemática',
-                        data: [1, 2, 1, 2, 2, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2],
-                        backgroundColor: '#0dcaf0', // Azul claro
-                        borderRadius: 4
-                    },
-                    {
-                        label: 'Alunos faltosos em L. Portuguesa',
-                        data: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-                        type: 'line',
-                        borderColor: '#28a745', // Verde
-                        backgroundColor: '#28a745',
-                        borderWidth: 2,
-                        fill: false,
-                        tension: 0.25,
-                        pointRadius: 2,
-                        pointHoverRadius: 4
-                    },
-                    {
-                        label: 'Alunos faltosos em Matemática',
-                        data: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-                        type: 'line',
-                        borderColor: '#ffc107', // Amarelo
-                        backgroundColor: '#ffc107',
-                        borderWidth: 2,
-                        fill: false,
-                        tension: 0.25,
-                        pointRadius: 2,
-                        pointHoverRadius: 4
-                    }
-                ]
-            };
-
-            // --- Configurações iguais, títulos diferentes ---
-            const config1 = {
-                type: 'bar',
-                data: data1,
-                options: {
-                    responsive: true,
-                    aspectRatio: 2.6,
-                    plugins: {
-                        legend: { position: 'bottom' },
-                        title: {
-                            display: true,
-                            text: [
-                                'Aulas dadas e aulas previstas',
-                                'Município: Colatina - Junho de 2024'
-                            ],
-                            font: { size: 18, weight: 'bold' },
-                            color: '#222',
-                            padding: { top: 10, bottom: 5 }
-                        }
-                    },
-                    scales: {
-                        x: {
-                            stacked: false,
-                            title: { display: true, text: 'Dias letivos do mês de junho de 2025', font: { size: 14 } }
-                        },
-                        y: {
-                            beginAtZero: true,
-                            title: { display: false }
-                        }
-                    }
-                }
-            };
-
-            const config2 = {
-                type: 'bar',
-                data: data2,
-                options: {
-                    responsive: true,
-                    aspectRatio: 2.6,
-                    plugins: {
-                        legend: { position: 'bottom' },
-                        title: {
-                            display: true,
-                            text: [
-                                'Faltas e alunos faltosos',
-                                'Município: Colatina - Junho de 2024'
-                            ],
-                            font: { size: 18, weight: 'bold' },
-                            color: '#222',
-                            padding: { top: 10, bottom: 5 }
-                        }
-                    },
-                    scales: {
-                        x: {
-                            stacked: false,
-                            title: { display: true, text: 'Dias letivos do mês de junho de 2025', font: { size: 14 } }
-                        },
-                        y: {
-                            beginAtZero: true,
-                            title: { display: false }
-                        }
-                    }
-                }
-            };
-
-            new Chart(document.getElementById('graficoAulas1'), config1);
-            new Chart(document.getElementById('graficoAulas2'), config2);
-        </script>
+</script>
 </body>
 
 </html>
