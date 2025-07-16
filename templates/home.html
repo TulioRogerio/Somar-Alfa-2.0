@@ -16,7 +16,9 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+    <!-- FullCalendar CSS + Bootstrap Theme -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/bootstrap5.global.min.css" rel="stylesheet">
 
     <style>
         #graficoLinha,
@@ -25,6 +27,13 @@
         #graficoLinha4 {
             height: 200px !important;
         }
+
+        #graficoAulas1, #graficoAulas2 {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 1px 8px #0001;
+        }
+
 
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -307,7 +316,8 @@
                                     class="link-body-emphasis d-inline-flex text-decoration-none rounded">Avaliações
                                     Externas</a>
                             </li>
-                            <li><a href="./frequencia.html" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Frequência</a>
+                            <li><a href="./frequencia.html"
+                                    class="link-body-emphasis d-inline-flex text-decoration-none rounded">Frequência</a>
                             </li>
                         </ul>
                     </div>
@@ -343,7 +353,7 @@
 
         <!-- Configuração da seção a direita-->
         <div class="p-4 conteudo-principal flex-grow-1 overflow-auto">
-            <div class="dashboard-title text-center mb-4">Painel de Análise</div>
+            <div class="dashboard-title text-center mb-4">Painel de Monitoramento</div>
             <p>(inserir botão de salvamento automático)</p>
             <!-- Início do Conteúdo-->
             <div class="container-fluid">
@@ -389,7 +399,7 @@
                     <div class="col-12 col-md-6 col-xl-6">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
-                                <div class="card-title fw-bold"> <i class="bi bi-clock-history me-2 text-warning"></i>
+                                <div class="card-title fw-bold text-center"> <i class="bi bi-clock-history me-2 text-warning"></i>
                                     Tarefas com data de vencimento próximas</div>
                                 <!-- Lista de tarefas ou gráfico -->
                                 <ul class="list-group list-group-flush">
@@ -443,54 +453,57 @@
                     <div class="col-12 col-md-6 col-xl-6">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
-                                <div class="card-title fw-bold">VT confirmadas</div>
+                                <div class="card-title fw-bold text-center">VT confirmadas</div>
                                 <!-- Lista ou gráfico -->
-<ul class="list-group list-group-flush">
+                                <ul class="list-group list-group-flush">
 
-  <!-- Visita agendada -->
-  <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
-    <div>
-      <span class="fw-semibold">Visita à EMEF Monte Castelo</span>
-      <span class="text-muted small ms-2">(Técnico: João)</span>
-    </div>
-    <div>
-      <span class="badge rounded-pill bg-warning text-dark me-2">
-        18/07/2025
-      </span>
-      <span class="badge bg-secondary small">Agendada</span>
-    </div>
-  </li>
+                                    <!-- Visita agendada -->
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <div>
+                                            <span class="fw-semibold">Visita à EMEF Monte Castelo</span>
+                                            <span class="text-muted small ms-2">(Técnico: João)</span>
+                                        </div>
+                                        <div>
+                                            <span class="badge rounded-pill bg-warning text-dark me-2">
+                                                18/07/2025
+                                            </span>
+                                            <span class="badge bg-secondary small">Agendada</span>
+                                        </div>
+                                    </li>
 
-  <!-- Visita vencendo hoje -->
-  <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
-    <div>
-      <span class="fw-semibold">Visita à EMEF São Pedro</span>
-      <span class="text-muted small ms-2">(Técnico: Maria)</span>
-    </div>
-    <div>
-      <span class="badge rounded-pill bg-danger me-2">
-        15/07/2025
-      </span>
-      <span class="badge bg-danger small">Vence hoje!</span>
-    </div>
-  </li>
+                                    <!-- Visita vencendo hoje -->
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <div>
+                                            <span class="fw-semibold">Visita à EMEF São Pedro</span>
+                                            <span class="text-muted small ms-2">(Técnico: Maria)</span>
+                                        </div>
+                                        <div>
+                                            <span class="badge rounded-pill bg-danger me-2">
+                                                15/07/2025
+                                            </span>
+                                            <span class="badge bg-danger small">Vence hoje!</span>
+                                        </div>
+                                    </li>
 
-  <!-- Visita a ser agendada -->
-  <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
-    <div>
-      <span class="fw-semibold">Visita à EMEF Paulo Freire</span>
-      <span class="text-muted small ms-2">(Técnico: Carlos)</span>
-    </div>
-    <div>
-      <span class="badge bg-light text-dark small border">A ser agendada</span>
-    </div>
-  </li>
+                                    <!-- Visita a ser agendada -->
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <div>
+                                            <span class="fw-semibold">Visita à EMEF Paulo Freire</span>
+                                            <span class="text-muted small ms-2">(Técnico: Carlos)</span>
+                                        </div>
+                                        <div>
+                                            <span class="badge bg-light text-dark small border">A ser agendada</span>
+                                        </div>
+                                    </li>
 
-</ul>
+                                </ul>
 
-<div class="mt-3 text-end">
-  <a href="#" class="btn btn-sm btn-outline-primary">Ver todas as visitas</a>
-</div>
+                                <div class="mt-3 text-end">
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Ver todas as visitas</a>
+                                </div>
 
                             </div>
                         </div>
@@ -502,16 +515,163 @@
                     <div class="col-12 col-xl-8">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
-                                <div class="card-title fw-bold">Agenda</div>
+                                <div class="card-title fw-bold text-center">Agenda</div>
                                 <!-- Calendário ou resumo de eventos -->
+                                <div class="container py-4">
+                                    <div id="calendario"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-xl-4">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
-                                <div class="card-title fw-bold">Visitas Técnicas</div>
+                                <div class="card-title fw-bold text-center">Visitas Técnicas</div>
                                 <!-- Lista ou gráfico -->
+                                <div class="small">
+                                    <!-- CICLO I -->
+                                    <div class="mb-2 p-2 rounded"
+                                        style="background: #fff7e0; border: 1px solid #ffe599;">
+                                        <div class="fw-semibold text-warning mb-2" style="font-size: 1.05em;">Ciclo I
+                                        </div>
+                                        <ul class="list-unstyled mb-0">
+                                            <li
+                                                class="d-flex justify-content-between align-items-center py-1 border-bottom">
+                                                <div>
+                                                    <span class="fw-normal">Planejamento</span>
+                                                    <span class="text-muted small ms-2">Diagnóstico e identificação de
+                                                        desafios</span>
+                                                </div>
+                                                <span class="badge bg-success">Concluído</span>
+                                            </li>
+                                            <li
+                                                class="d-flex justify-content-between align-items-center py-1 border-bottom">
+                                                <div>
+                                                    <span class="fw-normal">Planejamento</span>
+                                                    <span class="text-muted small ms-2">Elaboração do Plano de
+                                                        Ação</span>
+                                                </div>
+                                                <span class="badge bg-success">Concluído</span>
+                                            </li>
+                                            <li
+                                                class="d-flex justify-content-between align-items-center py-1 border-bottom">
+                                                <div>
+                                                    <span class="fw-normal">Planejamento</span>
+                                                    <span class="text-muted small ms-2">Qualificação do Plano de
+                                                        Ação</span>
+                                                </div>
+                                                <span class="badge bg-warning text-dark">Parcialmente preenchido</span>
+                                            </li>
+                                            <li
+                                                class="d-flex justify-content-between align-items-center py-1 border-bottom">
+                                                <div>
+                                                    <span class="fw-normal">Execução I</span>
+                                                    <span class="text-muted small ms-2">Acompanhamento da execução do
+                                                        Plano de Ação</span>
+                                                </div>
+                                                <span class="badge bg-light text-dark border">Não iniciado</span>
+                                            </li>
+                                            <li
+                                                class="d-flex justify-content-between align-items-center py-1 border-bottom">
+                                                <div>
+                                                    <span class="fw-normal">Execução I</span>
+                                                    <span class="text-muted small ms-2">Reflexão sobre a incidência das
+                                                        ações</span>
+                                                </div>
+                                                <span class="badge bg-light text-dark border">Não iniciado</span>
+                                            </li>
+                                            <li
+                                                class="d-flex justify-content-between align-items-center py-1 border-bottom">
+                                                <div>
+                                                    <span class="fw-normal">SAAR I</span>
+                                                    <span class="text-muted small ms-2">SAAR N1</span>
+                                                </div>
+                                                <span class="badge bg-light text-dark border">Não iniciado</span>
+                                            </li>
+                                            <li class="d-flex justify-content-between align-items-center py-1">
+                                                <div>
+                                                    <span class="fw-normal">Correção de Rotas I</span>
+                                                    <span class="text-muted small ms-2">Aprimoramento do Plano de
+                                                        Ação</span>
+                                                </div>
+                                                <span class="badge bg-light text-dark border">Não iniciado</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- CICLO II -->
+                                    <div class="mb-2 p-2 rounded"
+                                        style="background: #e6f6fb; border: 1px solid #99d3df;">
+                                        <div class="fw-semibold text-info mb-2" style="font-size: 1.05em;">Ciclo II
+                                        </div>
+                                        <ul class="list-unstyled mb-0">
+                                            <li
+                                                class="d-flex justify-content-between align-items-center py-1 border-bottom">
+                                                <div>
+                                                    <span class="fw-normal">Execução II</span>
+                                                    <span class="text-muted small ms-2">Acompanhamento da execução do
+                                                        Plano de Ação</span>
+                                                </div>
+                                                <span class="badge bg-light text-dark border">Não iniciado</span>
+                                            </li>
+                                            <li
+                                                class="d-flex justify-content-between align-items-center py-1 border-bottom">
+                                                <div>
+                                                    <span class="fw-normal">Execução II</span>
+                                                    <span class="text-muted small ms-2">Reflexão sobre a incidência das
+                                                        ações</span>
+                                                </div>
+                                                <span class="badge bg-light text-dark border">Não iniciado</span>
+                                            </li>
+                                            <li
+                                                class="d-flex justify-content-between align-items-center py-1 border-bottom">
+                                                <div>
+                                                    <span class="fw-normal">SAAR II</span>
+                                                    <span class="text-muted small ms-2">SAAR N1</span>
+                                                </div>
+                                                <span class="badge bg-light text-dark border">Não iniciado</span>
+                                            </li>
+                                            <li class="d-flex justify-content-between align-items-center py-1">
+                                                <div>
+                                                    <span class="fw-normal">Correção de Rotas II</span>
+                                                    <span class="text-muted small ms-2">Revisão do Plano de Ação</span>
+                                                </div>
+                                                <span class="badge bg-light text-dark border">Não iniciado</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- CICLO III -->
+                                    <div class="p-2 rounded" style="background: #e8f5e9; border: 1px solid #b5e5c1;">
+                                        <div class="fw-semibold text-success mb-2" style="font-size: 1.05em;">Ciclo III
+                                        </div>
+                                        <ul class="list-unstyled mb-0">
+                                            <li
+                                                class="d-flex justify-content-between align-items-center py-1 border-bottom">
+                                                <div>
+                                                    <span class="fw-normal">Execução III</span>
+                                                    <span class="text-muted small ms-2">Reflexão sobre a incidência das
+                                                        ações</span>
+                                                </div>
+                                                <span class="badge bg-light text-dark border">Não iniciado</span>
+                                            </li>
+                                            <li class="d-flex justify-content-between align-items-center py-1">
+                                                <div>
+                                                    <span class="fw-normal">Balanço Final</span>
+                                                    <span class="text-muted small ms-2">Balanço Final</span>
+                                                </div>
+                                                <span class="badge bg-light text-dark border">Não iniciado</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <div class="mt-3 text-end">
+                                    <a href="#" class="btn btn-sm btn-outline-primary">Acessar detalhes dos ciclos</a>
+                                </div>
+
+
+
                             </div>
                         </div>
                     </div>
@@ -522,14 +682,16 @@
                     <div class="col-12 col-md-6">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
-                                <div class="card-title fw-bold">Frequência - LP</div>
+                                <div class="card-title fw-bold text-center">Frequência e Aulas dadas</div>
+                                  <canvas id="graficoAulas1" height="140"></canvas>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
-                                <div class="card-title fw-bold">Frequência - Mat</div>
+                                <div class="card-title fw-bold text-center">Faltas e alunos Faltosos</div>
+                                  <canvas id="graficoAulas2" height="140"></canvas>                                
                             </div>
                         </div>
                     </div>
@@ -633,6 +795,218 @@
                 criarGrafico("graficoLinha4", "IDEBES - Metas", [8, 17, 34, 40, 58, 66], "#dc3545");
             });
         </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var calendarEl = document.getElementById('calendario');
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                    height: 500,
+                    themeSystem: 'bootstrap5',
+                    initialView: 'dayGridMonth',
+                    locale: 'pt-br',  // OU 'ptBr'
+                    buttonText: {
+                        today: 'Hoje',
+                        month: 'Mês',
+                        week: 'Semana',
+                        day: 'Dia',
+                        list: 'Lista'
+                    },
+                    headerToolbar: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+                    },
+                    events: [
+                        {
+                            title: 'Reunião de Fluxo S',
+                            start: '2025-06-30T13:00:00'
+                        },
+                        {
+                            title: 'Reunião de alinhamento',
+                            start: '2025-07-10T09:00:00'
+                        },
+                        {
+                            title: '2ª Capacitação: Fluência',
+                            start: '2025-07-30T08:00:00'
+                        }
+                    ],
+                    eventTimeFormat: {
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        hour12: false
+                    }
+                });
+                calendar.render();
+            });
+        </script>
+
+        <!-- FullCalendar -->
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/bootstrap5.global.min.js"></script>
+
+<script>
+  // --- Configuração dos labels comuns ---
+  const labels = [
+    '03', '04', '05', '06', '07',
+    '10', '11', '12', '13', '14',
+    '17', '18', '19', '20', '21',
+    '24', '25', '26', '27', '28'
+  ];
+
+  // --- Gráfico 1: Colatina ---
+  const data1 = {
+    labels: labels,
+    datasets: [
+      {
+        label: 'Aulas Dadas de L. Portuguesa',
+        data: [5, 4, 5, 4, 5, 6, 5, 5, 5, 6, 4, 5, 6, 5, 4, 5, 5, 4, 5, 6],
+        backgroundColor: '#6b168c', // Roxo escuro
+        borderRadius: 4
+      },
+      {
+        label: 'Aulas Dadas de Matemática',
+        data: [3, 3, 4, 4, 3, 4, 3, 4, 4, 3, 3, 4, 3, 3, 4, 3, 4, 3, 4, 4],
+        backgroundColor: '#f27c24', // Laranja
+        borderRadius: 4
+      },
+      {
+        label: 'Aulas Previstas de L. Portuguesa',
+        data: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+        type: 'line',
+        borderColor: '#be63d6',
+        backgroundColor: '#be63d6',
+        borderWidth: 2,
+        fill: false,
+        tension: 0.25,
+        pointRadius: 2,
+        pointHoverRadius: 4
+      },
+      {
+        label: 'Aulas Previstas de Matemática',
+        data: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+        type: 'line',
+        borderColor: '#f5a492',
+        backgroundColor: '#f5a492',
+        borderWidth: 2,
+        fill: false,
+        tension: 0.25,
+        pointRadius: 2,
+        pointHoverRadius: 4
+      }
+    ]
+  };
+
+  // --- Gráfico 2: Linhares (exemplo com novas cores/legendas) ---
+  const data2 = {
+    labels: labels,
+    datasets: [
+      {
+        label: 'Faltas em L. Portuguesa',
+        data: [2, 3, 3, 2, 3, 4, 3, 2, 4, 3, 2, 3, 4, 3, 3, 4, 3, 2, 3, 2],
+        backgroundColor: '#157347', // Verde escuro
+        borderRadius: 4
+      },
+      {
+        label: 'Faltas em Matemática',
+        data: [1, 2, 1, 2, 2, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2],
+        backgroundColor: '#0dcaf0', // Azul claro
+        borderRadius: 4
+      },
+      {
+        label: 'Alunos faltosos em L. Portuguesa',
+        data: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+        type: 'line',
+        borderColor: '#28a745', // Verde
+        backgroundColor: '#28a745',
+        borderWidth: 2,
+        fill: false,
+        tension: 0.25,
+        pointRadius: 2,
+        pointHoverRadius: 4
+      },
+      {
+        label: 'Alunos faltosos em Matemática',
+        data: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+        type: 'line',
+        borderColor: '#ffc107', // Amarelo
+        backgroundColor: '#ffc107',
+        borderWidth: 2,
+        fill: false,
+        tension: 0.25,
+        pointRadius: 2,
+        pointHoverRadius: 4
+      }
+    ]
+  };
+
+  // --- Configurações iguais, títulos diferentes ---
+  const config1 = {
+    type: 'bar',
+    data: data1,
+    options: {
+      responsive: true,
+      aspectRatio: 2.6,
+      plugins: {
+        legend: { position: 'bottom' },
+        title: {
+          display: true,
+          text: [
+            'Aulas dadas e aulas previstas',
+            'Município: Colatina - Junho de 2024'
+          ],
+          font: { size: 18, weight: 'bold' },
+          color: '#222',
+          padding: { top: 10, bottom: 5 }
+        }
+      },
+      scales: {
+        x: {
+          stacked: false,
+          title: { display: true, text: 'Dias letivos do mês de junho de 2025', font: { size: 14 } }
+        },
+        y: {
+          beginAtZero: true,
+          title: { display: false }
+        }
+      }
+    }
+  };
+
+  const config2 = {
+    type: 'bar',
+    data: data2,
+    options: {
+      responsive: true,
+      aspectRatio: 2.6,
+      plugins: {
+        legend: { position: 'bottom' },
+        title: {
+          display: true,
+          text: [
+            'Faltas e alunos faltosos',
+            'Município: Colatina - Junho de 2024'
+          ],
+          font: { size: 18, weight: 'bold' },
+          color: '#222',
+          padding: { top: 10, bottom: 5 }
+        }
+      },
+      scales: {
+        x: {
+          stacked: false,
+          title: { display: true, text: 'Dias letivos do mês de junho de 2025', font: { size: 14 } }
+        },
+        y: {
+          beginAtZero: true,
+          title: { display: false }
+        }
+      }
+    }
+  };
+
+  new Chart(document.getElementById('graficoAulas1'), config1);
+  new Chart(document.getElementById('graficoAulas2'), config2);
+</script>
+
 
 </body>
 
