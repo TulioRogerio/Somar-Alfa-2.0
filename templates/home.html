@@ -28,7 +28,8 @@
             height: 200px !important;
         }
 
-        #graficoAulas1, #graficoAulas2 {
+        #graficoAulas1,
+        #graficoAulas2 {
             background: #fff;
             border-radius: 12px;
             box-shadow: 0 1px 8px #0001;
@@ -399,7 +400,8 @@
                     <div class="col-12 col-md-6 col-xl-6">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
-                                <div class="card-title fw-bold text-center"> <i class="bi bi-clock-history me-2 text-warning"></i>
+                                <div class="card-title fw-bold text-center"> <i
+                                        class="bi bi-clock-history me-2 text-warning"></i>
                                     Tarefas com data de vencimento próximas</div>
                                 <!-- Lista de tarefas ou gráfico -->
                                 <ul class="list-group list-group-flush">
@@ -683,7 +685,7 @@
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
                                 <div class="card-title fw-bold text-center">Frequência e Aulas dadas</div>
-                                  <canvas id="graficoAulas1" height="140"></canvas>
+                                <canvas id="graficoAulas1" height="140"></canvas>
                             </div>
                         </div>
                     </div>
@@ -691,56 +693,548 @@
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
                                 <div class="card-title fw-bold text-center">Faltas e alunos Faltosos</div>
-                                  <canvas id="graficoAulas2" height="140"></canvas>                                
+                                <canvas id="graficoAulas2" height="140"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Linha 5: Plano | Mapas | Tarefas -->
                 <div class="row g-3 mb-3">
                     <div class="col-12 col-md-4">
+                        <!-- Mapas -->
                         <div class="card h-100 shadow-sm">
-                            <div class="card-body text-center">
-                                <div class="card-title fw-bold">Plano</div>
+                            <div class="card-body">
+                                <div class="card-title fw-bold text-center mb-2">Plano de Ação</div>
+                                <ul class="list-group list-group-flush mb-3">
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <span>Plano de ação postado em 2025?</span>
+                                        <span class="badge bg-success">Sim</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <span>Quantidade de Mapas de Ação ativos</span>
+                                        <span class="badge bg-primary">2</span>
+                                    </li>
+                                </ul>
+                                <!-- Mapas ativos -->
+                                <div class="mb-2">
+                                    <div class="small fw-bold">Títulos dos Mapas:</div>
+                                    <ul class="list-unstyled ms-2">
+                                        <li>
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#modalMapa1"
+                                                class="link-primary small">
+                                                Mapa 1: Aprendizagem
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#modalMapa2"
+                                                class="link-primary small">
+                                                Mapa 2: Inclusão
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Modal exemplo para Mapa 1 -->
+                                <div class="modal fade" id="modalMapa1" tabindex="-1">
+                                    <div class="modal-dialog modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Detalhes do Mapa: Aprendizagem</h5>
+                                                <button type="button" class="btn-close"
+                                                    data-bs-dismiss="modal"></button>
+                                            </div>
+                                            <div class="modal-body small">
+                                                <b>Problemas:</b>
+                                                <ul>
+                                                    <li>Baixo desempenho em leitura</li>
+                                                    <li>Frequência insuficiente nas aulas</li>
+                                                </ul>
+                                                <b>Desafios:</b>
+                                                <ul>
+                                                    <li>Envolver as famílias no processo</li>
+                                                    <li>Reduzir absenteísmo</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal exemplo para Mapa 2 -->
+                                <div class="modal fade" id="modalMapa2" tabindex="-1">
+                                    <div class="modal-dialog modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Detalhes do Mapa: Inclusão</h5>
+                                                <button type="button" class="btn-close"
+                                                    data-bs-dismiss="modal"></button>
+                                            </div>
+                                            <div class="modal-body small">
+                                                <b>Problemas:</b>
+                                                <ul>
+                                                    <li>Alunos sem acompanhamento especializado</li>
+                                                </ul>
+                                                <b>Desafios:</b>
+                                                <ul>
+                                                    <li>Formação de professores para inclusão</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <!-- Tarefas -->
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <div class="card-title fw-bold text-center mb-2">Tarefas</div>
+                                <ul class="list-group list-group-flush">
+                                    <!-- Exemplo: Previstas e não inicializadas -->
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <div>
+                                            <span>Previstas e não inicializadas</span>
+                                            <a href="#" class="ms-2 text-primary" data-bs-toggle="modal"
+                                                data-bs-target="#modalPrevistasNaoInic">
+                                                <i class="bi bi-list-ul"></i>
+                                            </a>
+                                        </div>
+                                        <span class="badge bg-secondary">3</span>
+                                    </li>
+                                    <!-- Outros tipos de tarefas, todos com link/modal se desejar -->
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <div>
+                                            <span>Previstas e inicializadas no prazo</span>
+                                            <a href="#" class="ms-2 text-primary" data-bs-toggle="modal"
+                                                data-bs-target="#modalPrevistasNoPrazo">
+                                                <i class="bi bi-list-ul"></i>
+                                            </a>
+                                        </div>
+                                        <span class="badge bg-success">2</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <div>
+                                            <span>Previstas e não inicializadas com atraso</span>
+                                            <a href="#" class="ms-2 text-primary" data-bs-toggle="modal"
+                                                data-bs-target="#modalPrevistasAtraso">
+                                                <i class="bi bi-list-ul"></i>
+                                            </a>
+                                        </div>
+                                        <span class="badge bg-warning text-dark">1</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <div>
+                                            <span>Em andamento no prazo</span>
+                                            <a href="#" class="ms-2 text-primary" data-bs-toggle="modal"
+                                                data-bs-target="#modalAndamentoPrazo">
+                                                <i class="bi bi-list-ul"></i>
+                                            </a>
+                                        </div>
+                                        <span class="badge bg-primary">4</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <div>
+                                            <span>Em andamento atrasada</span>
+                                            <a href="#" class="ms-2 text-primary" data-bs-toggle="modal"
+                                                data-bs-target="#modalAndamentoAtraso">
+                                                <i class="bi bi-list-ul"></i>
+                                            </a>
+                                        </div>
+                                        <span class="badge bg-danger">1</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <div>
+                                            <span>Concluídas no prazo</span>
+                                            <a href="#" class="ms-2 text-primary" data-bs-toggle="modal"
+                                                data-bs-target="#modalConcluidasPrazo">
+                                                <i class="bi bi-list-ul"></i>
+                                            </a>
+                                        </div>
+                                        <span class="badge bg-success">5</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <div>
+                                            <span>Concluídas com atraso</span>
+                                            <a href="#" class="ms-2 text-primary" data-bs-toggle="modal"
+                                                data-bs-target="#modalConcluidasAtraso">
+                                                <i class="bi bi-list-ul"></i>
+                                            </a>
+                                        </div>
+                                        <span class="badge bg-warning text-dark">2</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- MODAL: Previstas e não inicializadas -->
+                        <div class="modal fade" id="modalPrevistasNaoInic" tabindex="-1">
+                            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Tarefas: Previstas e não inicializadas</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-sm table-bordered align-middle mb-0">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th>Tarefa</th>
+                                                        <th>Responsável</th>
+                                                        <th>Data de início</th>
+                                                        <th>Data término prevista</th>
+                                                        <th>Data término real</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Preparar diagnóstico</td>
+                                                        <td>Maria</td>
+                                                        <td>01/03/2025</td>
+                                                        <td>10/03/2025</td>
+                                                        <td>—</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Coletar evidências</td>
+                                                        <td>Carlos</td>
+                                                        <td>05/03/2025</td>
+                                                        <td>20/03/2025</td>
+                                                        <td>—</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Revisar instrumentos</td>
+                                                        <td>João</td>
+                                                        <td>09/03/2025</td>
+                                                        <td>15/03/2025</td>
+                                                        <td>—</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MODAL: Previstas e inicializadas no prazo -->
+                        <div class="modal fade" id="modalPrevistasNoPrazo" tabindex="-1">
+                            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Tarefas: Previstas e inicializadas no prazo</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-sm table-bordered align-middle mb-0">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th>Tarefa</th>
+                                                        <th>Responsável</th>
+                                                        <th>Data de início</th>
+                                                        <th>Data término prevista</th>
+                                                        <th>Data término real</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Planejar ações pedagógicas</td>
+                                                        <td>Andréa</td>
+                                                        <td>11/03/2025</td>
+                                                        <td>22/03/2025</td>
+                                                        <td>—</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Organizar cronograma</td>
+                                                        <td>Renata</td>
+                                                        <td>12/03/2025</td>
+                                                        <td>23/03/2025</td>
+                                                        <td>—</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MODAL: Previstas e não inicializadas com atraso -->
+                        <div class="modal fade" id="modalPrevistasAtraso" tabindex="-1">
+                            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Tarefas: Previstas e não inicializadas com atraso</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-sm table-bordered align-middle mb-0">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th>Tarefa</th>
+                                                        <th>Responsável</th>
+                                                        <th>Data de início</th>
+                                                        <th>Data término prevista</th>
+                                                        <th>Data término real</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Relatório de resultados</td>
+                                                        <td>Paulo</td>
+                                                        <td>15/03/2025</td>
+                                                        <td>20/03/2025</td>
+                                                        <td>—</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MODAL: Em andamento no prazo -->
+                        <div class="modal fade" id="modalAndamentoPrazo" tabindex="-1">
+                            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Tarefas: Em andamento no prazo</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-sm table-bordered align-middle mb-0">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th>Tarefa</th>
+                                                        <th>Responsável</th>
+                                                        <th>Data de início</th>
+                                                        <th>Data término prevista</th>
+                                                        <th>Data término real</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Implementar plano de ação</td>
+                                                        <td>Lucas</td>
+                                                        <td>18/03/2025</td>
+                                                        <td>29/03/2025</td>
+                                                        <td>—</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Monitorar indicadores</td>
+                                                        <td>Fernanda</td>
+                                                        <td>20/03/2025</td>
+                                                        <td>31/03/2025</td>
+                                                        <td>—</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Comunicação à equipe</td>
+                                                        <td>Patrícia</td>
+                                                        <td>22/03/2025</td>
+                                                        <td>30/03/2025</td>
+                                                        <td>—</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Reunião com professores</td>
+                                                        <td>Cláudio</td>
+                                                        <td>23/03/2025</td>
+                                                        <td>01/04/2025</td>
+                                                        <td>—</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MODAL: Em andamento atrasada -->
+                        <div class="modal fade" id="modalAndamentoAtraso" tabindex="-1">
+                            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Tarefas: Em andamento atrasada</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-sm table-bordered align-middle mb-0">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th>Tarefa</th>
+                                                        <th>Responsável</th>
+                                                        <th>Data de início</th>
+                                                        <th>Data término prevista</th>
+                                                        <th>Data término real</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Encaminhar evidências ao setor</td>
+                                                        <td>Julia</td>
+                                                        <td>25/03/2025</td>
+                                                        <td>01/04/2025</td>
+                                                        <td>—</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MODAL: Concluídas no prazo -->
+                        <div class="modal fade" id="modalConcluidasPrazo" tabindex="-1">
+                            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Tarefas: Concluídas no prazo</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-sm table-bordered align-middle mb-0">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th>Tarefa</th>
+                                                        <th>Responsável</th>
+                                                        <th>Data de início</th>
+                                                        <th>Data término prevista</th>
+                                                        <th>Data término real</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Publicar relatório</td>
+                                                        <td>Gustavo</td>
+                                                        <td>02/04/2025</td>
+                                                        <td>10/04/2025</td>
+                                                        <td>10/04/2025</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Enviar documentos à secretaria</td>
+                                                        <td>Ana</td>
+                                                        <td>05/04/2025</td>
+                                                        <td>15/04/2025</td>
+                                                        <td>15/04/2025</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Atualizar cadastro no sistema</td>
+                                                        <td>Eduardo</td>
+                                                        <td>06/04/2025</td>
+                                                        <td>16/04/2025</td>
+                                                        <td>16/04/2025</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Validar ações com equipe</td>
+                                                        <td>Marina</td>
+                                                        <td>07/04/2025</td>
+                                                        <td>17/04/2025</td>
+                                                        <td>17/04/2025</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Finalizar prestação de contas</td>
+                                                        <td>Bruno</td>
+                                                        <td>08/04/2025</td>
+                                                        <td>18/04/2025</td>
+                                                        <td>18/04/2025</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MODAL: Concluídas com atraso -->
+                        <div class="modal fade" id="modalConcluidasAtraso" tabindex="-1">
+                            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Tarefas: Concluídas com atraso</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-sm table-bordered align-middle mb-0">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th>Tarefa</th>
+                                                        <th>Responsável</th>
+                                                        <th>Data de início</th>
+                                                        <th>Data término prevista</th>
+                                                        <th>Data término real</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Inserir evidências finais</td>
+                                                        <td>Larissa</td>
+                                                        <td>15/04/2025</td>
+                                                        <td>20/04/2025</td>
+                                                        <td>25/04/2025</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Postar resultados no portal</td>
+                                                        <td>Felipe</td>
+                                                        <td>16/04/2025</td>
+                                                        <td>21/04/2025</td>
+                                                        <td>27/04/2025</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-4">
+                        <!-- Teste Consistência -->
                         <div class="card h-100 shadow-sm">
-                            <div class="card-body text-center">
-                                <div class="card-title fw-bold">Mapas</div>
+                            <div class="card-body">
+                                <div class="card-title fw-bold text-center mb-2">Teste de consistência e Produtos</div>
+                                <ul class="list-group list-group-flush mb-3">
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <span>Teste de consistência realizado?</span>
+                                        <span class="badge bg-success">Sim</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <span>Percentual de viabilidade</span>
+                                        <span class="badge bg-info text-dark">92%</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <span>Tarefas concluídas sem produto</span>
+                                        <span class="badge bg-secondary">2</span>
+                                    </li>
+                                    <li
+                                        class="list-group-item d-flex justify-content-between align-items-center px-0 py-2">
+                                        <span>Tarefas concluídas com produto</span>
+                                        <span class="badge bg-primary">7</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-body text-center">
-                                <div class="card-title fw-bold">Tarefas</div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
 
-                <!-- Linha 6: Teste de Consistência | Produtos -->
-                <div class="row g-3 mb-3">
-                    <div class="col-12 col-md-6">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-body text-center">
-                                <div class="card-title fw-bold">Teste de consistência</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="card h-100 shadow-sm">
-                            <div class="card-body text-center">
-                                <div class="card-title fw-bold">Produtos</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
 
             <!-- Fim do Conteúdo - -->
         </div>
@@ -843,171 +1337,169 @@
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/bootstrap5.global.min.js"></script>
 
-<script>
-  // --- Configuração dos labels comuns ---
-  const labels = [
-    '03', '04', '05', '06', '07',
-    '10', '11', '12', '13', '14',
-    '17', '18', '19', '20', '21',
-    '24', '25', '26', '27', '28'
-  ];
+        <script>
+            // --- Configuração dos labels comuns ---
+            const labels = [
+                '03', '04', '05', '06', '07',
+                '10', '11', '12', '13', '14',
+                '17', '18', '19', '20', '21',
+                '24', '25', '26', '27', '28'
+            ];
 
-  // --- Gráfico 1: Colatina ---
-  const data1 = {
-    labels: labels,
-    datasets: [
-      {
-        label: 'Aulas Dadas de L. Portuguesa',
-        data: [5, 4, 5, 4, 5, 6, 5, 5, 5, 6, 4, 5, 6, 5, 4, 5, 5, 4, 5, 6],
-        backgroundColor: '#6b168c', // Roxo escuro
-        borderRadius: 4
-      },
-      {
-        label: 'Aulas Dadas de Matemática',
-        data: [3, 3, 4, 4, 3, 4, 3, 4, 4, 3, 3, 4, 3, 3, 4, 3, 4, 3, 4, 4],
-        backgroundColor: '#f27c24', // Laranja
-        borderRadius: 4
-      },
-      {
-        label: 'Aulas Previstas de L. Portuguesa',
-        data: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
-        type: 'line',
-        borderColor: '#be63d6',
-        backgroundColor: '#be63d6',
-        borderWidth: 2,
-        fill: false,
-        tension: 0.25,
-        pointRadius: 2,
-        pointHoverRadius: 4
-      },
-      {
-        label: 'Aulas Previstas de Matemática',
-        data: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
-        type: 'line',
-        borderColor: '#f5a492',
-        backgroundColor: '#f5a492',
-        borderWidth: 2,
-        fill: false,
-        tension: 0.25,
-        pointRadius: 2,
-        pointHoverRadius: 4
-      }
-    ]
-  };
+            // --- Gráfico 1: Colatina ---
+            const data1 = {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Aulas Dadas de L. Portuguesa',
+                        data: [5, 4, 5, 4, 5, 6, 5, 5, 5, 6, 4, 5, 6, 5, 4, 5, 5, 4, 5, 6],
+                        backgroundColor: '#6b168c', // Roxo escuro
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Aulas Dadas de Matemática',
+                        data: [3, 3, 4, 4, 3, 4, 3, 4, 4, 3, 3, 4, 3, 3, 4, 3, 4, 3, 4, 4],
+                        backgroundColor: '#f27c24', // Laranja
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Aulas Previstas de L. Portuguesa',
+                        data: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+                        type: 'line',
+                        borderColor: '#be63d6',
+                        backgroundColor: '#be63d6',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.25,
+                        pointRadius: 2,
+                        pointHoverRadius: 4
+                    },
+                    {
+                        label: 'Aulas Previstas de Matemática',
+                        data: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+                        type: 'line',
+                        borderColor: '#f5a492',
+                        backgroundColor: '#f5a492',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.25,
+                        pointRadius: 2,
+                        pointHoverRadius: 4
+                    }
+                ]
+            };
 
-  // --- Gráfico 2: Linhares (exemplo com novas cores/legendas) ---
-  const data2 = {
-    labels: labels,
-    datasets: [
-      {
-        label: 'Faltas em L. Portuguesa',
-        data: [2, 3, 3, 2, 3, 4, 3, 2, 4, 3, 2, 3, 4, 3, 3, 4, 3, 2, 3, 2],
-        backgroundColor: '#157347', // Verde escuro
-        borderRadius: 4
-      },
-      {
-        label: 'Faltas em Matemática',
-        data: [1, 2, 1, 2, 2, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2],
-        backgroundColor: '#0dcaf0', // Azul claro
-        borderRadius: 4
-      },
-      {
-        label: 'Alunos faltosos em L. Portuguesa',
-        data: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
-        type: 'line',
-        borderColor: '#28a745', // Verde
-        backgroundColor: '#28a745',
-        borderWidth: 2,
-        fill: false,
-        tension: 0.25,
-        pointRadius: 2,
-        pointHoverRadius: 4
-      },
-      {
-        label: 'Alunos faltosos em Matemática',
-        data: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
-        type: 'line',
-        borderColor: '#ffc107', // Amarelo
-        backgroundColor: '#ffc107',
-        borderWidth: 2,
-        fill: false,
-        tension: 0.25,
-        pointRadius: 2,
-        pointHoverRadius: 4
-      }
-    ]
-  };
+            // --- Gráfico 2: Linhares (exemplo com novas cores/legendas) ---
+            const data2 = {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Faltas em L. Portuguesa',
+                        data: [2, 3, 3, 2, 3, 4, 3, 2, 4, 3, 2, 3, 4, 3, 3, 4, 3, 2, 3, 2],
+                        backgroundColor: '#157347', // Verde escuro
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Faltas em Matemática',
+                        data: [1, 2, 1, 2, 2, 2, 1, 2, 2, 1, 2, 1, 2, 2, 1, 2, 2, 1, 2, 2],
+                        backgroundColor: '#0dcaf0', // Azul claro
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Alunos faltosos em L. Portuguesa',
+                        data: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+                        type: 'line',
+                        borderColor: '#28a745', // Verde
+                        backgroundColor: '#28a745',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.25,
+                        pointRadius: 2,
+                        pointHoverRadius: 4
+                    },
+                    {
+                        label: 'Alunos faltosos em Matemática',
+                        data: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+                        type: 'line',
+                        borderColor: '#ffc107', // Amarelo
+                        backgroundColor: '#ffc107',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.25,
+                        pointRadius: 2,
+                        pointHoverRadius: 4
+                    }
+                ]
+            };
 
-  // --- Configurações iguais, títulos diferentes ---
-  const config1 = {
-    type: 'bar',
-    data: data1,
-    options: {
-      responsive: true,
-      aspectRatio: 2.6,
-      plugins: {
-        legend: { position: 'bottom' },
-        title: {
-          display: true,
-          text: [
-            'Aulas dadas e aulas previstas',
-            'Município: Colatina - Junho de 2024'
-          ],
-          font: { size: 18, weight: 'bold' },
-          color: '#222',
-          padding: { top: 10, bottom: 5 }
-        }
-      },
-      scales: {
-        x: {
-          stacked: false,
-          title: { display: true, text: 'Dias letivos do mês de junho de 2025', font: { size: 14 } }
-        },
-        y: {
-          beginAtZero: true,
-          title: { display: false }
-        }
-      }
-    }
-  };
+            // --- Configurações iguais, títulos diferentes ---
+            const config1 = {
+                type: 'bar',
+                data: data1,
+                options: {
+                    responsive: true,
+                    aspectRatio: 2.6,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        title: {
+                            display: true,
+                            text: [
+                                'Aulas dadas e aulas previstas',
+                                'Município: Colatina - Junho de 2024'
+                            ],
+                            font: { size: 18, weight: 'bold' },
+                            color: '#222',
+                            padding: { top: 10, bottom: 5 }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            stacked: false,
+                            title: { display: true, text: 'Dias letivos do mês de junho de 2025', font: { size: 14 } }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: { display: false }
+                        }
+                    }
+                }
+            };
 
-  const config2 = {
-    type: 'bar',
-    data: data2,
-    options: {
-      responsive: true,
-      aspectRatio: 2.6,
-      plugins: {
-        legend: { position: 'bottom' },
-        title: {
-          display: true,
-          text: [
-            'Faltas e alunos faltosos',
-            'Município: Colatina - Junho de 2024'
-          ],
-          font: { size: 18, weight: 'bold' },
-          color: '#222',
-          padding: { top: 10, bottom: 5 }
-        }
-      },
-      scales: {
-        x: {
-          stacked: false,
-          title: { display: true, text: 'Dias letivos do mês de junho de 2025', font: { size: 14 } }
-        },
-        y: {
-          beginAtZero: true,
-          title: { display: false }
-        }
-      }
-    }
-  };
+            const config2 = {
+                type: 'bar',
+                data: data2,
+                options: {
+                    responsive: true,
+                    aspectRatio: 2.6,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        title: {
+                            display: true,
+                            text: [
+                                'Faltas e alunos faltosos',
+                                'Município: Colatina - Junho de 2024'
+                            ],
+                            font: { size: 18, weight: 'bold' },
+                            color: '#222',
+                            padding: { top: 10, bottom: 5 }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            stacked: false,
+                            title: { display: true, text: 'Dias letivos do mês de junho de 2025', font: { size: 14 } }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: { display: false }
+                        }
+                    }
+                }
+            };
 
-  new Chart(document.getElementById('graficoAulas1'), config1);
-  new Chart(document.getElementById('graficoAulas2'), config2);
-</script>
-
-
+            new Chart(document.getElementById('graficoAulas1'), config1);
+            new Chart(document.getElementById('graficoAulas2'), config2);
+        </script>
 </body>
 
 </html>
