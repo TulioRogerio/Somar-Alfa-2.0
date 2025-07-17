@@ -220,11 +220,14 @@
         /* ou #fffbe6 */
 
         body {
-    background-color: #f4f7fa; /* Claro */
-}
-[data-bs-theme="dark"] body {
-    background-color: #222b35; /* Escuro elegante */
-}
+            background-color: #f4f7fa;
+            /* Claro */
+        }
+
+        [data-bs-theme="dark"] body {
+            background-color: #222b35;
+            /* Escuro elegante */
+        }
     </style>
 </head>
 
@@ -373,20 +376,23 @@
                         </svg>
                         Ciclo de Gestão
                     </a> </li>
-        <li class="mb-1"> <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-            data-bs-toggle="collapse" data-bs-target="#indicador_estruturante" aria-expanded="false">
-            Indicadores Estruturantes
-          </button>
-          <div class="collapse show" id="indicador_estruturante">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Avaliações
-                  Externas</a>
-              </li>
-              <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded nav-link active">Frequência</a>
-              </li>
-            </ul>
-          </div>
-        </li>
+                <li class="mb-1"> <button
+                        class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#indicador_estruturante" aria-expanded="false">
+                        Indicadores Estruturantes
+                    </button>
+                    <div class="collapse show" id="indicador_estruturante">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="#"
+                                    class="link-body-emphasis d-inline-flex text-decoration-none rounded">Avaliações
+                                    Externas</a>
+                            </li>
+                            <li><a href="#"
+                                    class="link-body-emphasis d-inline-flex text-decoration-none rounded nav-link active">Frequência</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                 <li> <a href="#" class="nav-link link-body-emphasis">
                         <svg class="bi pe-none me-2" width="16" height="16" aria-hidden="true">
                             <use xlink:href="#bi bi-bar-chart-line"></use>
@@ -410,7 +416,7 @@
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="#">Sair do Sistema</a></li>
+                    <li><a class="dropdown-item" href="./login.html">Sair do Sistema</a></li>
                 </ul>
             </div>
         </div>
@@ -424,24 +430,24 @@
 
             <!-- Cabeçalho -->
             <div class="container-fluid p-4">
-                <div class="border p-3 bg-white rounded-3 shadow-sm mb-4">
-                    <h5 class="fw-bold">DIÁRIO DE CLASSE - FREQUÊNCIA</h5>
+                <div class="p-3 rounded-3 shadow-sm mb-4 bg-body border">
+                    <h5 class="fw-bold text-body-emphasis">DIÁRIO DE CLASSE - FREQUÊNCIA</h5>
                     <div class="row mt-3">
                         <div class="col-md-3">
-                            <label class="form-label">Período Letivo</label>
-                            <select class="form-select">
+                            <label class="form-label text-body-secondary">Período Letivo</label>
+                            <select class="form-select bg-body-secondary text-body">
                                 <option>2025</option>
                             </select>
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label">SRE</label>
-                            <select class="form-select">
+                            <label class="form-label text-body-secondary">SRE</label>
+                            <select class="form-select bg-body-secondary text-body">
                                 <option>SRE Cariacica</option>
                             </select>
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label">Município</label>
-                            <select class="form-select">
+                            <label class="form-label text-body-secondary">Município</label>
+                            <select class="form-select bg-body-secondary text-body">
                                 <option>Cariacica</option>
                                 <option>Vitória</option>
                                 <option>Vila Velha</option>
@@ -455,22 +461,23 @@
                             </select>
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label">Escola</label>
-                            <input class="form-control" type="text" value="EEEFM Mundo Feliz" aria-label="EEEFM Mundo Feliz" disabled readonly>
+                            <label class="form-label text-body-secondary">Escola</label>
+                            <input class="form-control bg-body-secondary text-body" type="text"
+                                value="EEEFM Mundo Feliz" aria-label="EEEFM Mundo Feliz" disabled readonly>
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-3">
-                            <label class="form-label">Turno</label>
-                            <select class="form-select">
+                            <label class="form-label text-body-secondary">Turno</label>
+                            <select class="form-select bg-body-secondary text-body">
                                 <option>Matutino</option>
                                 <option>Vespertino</option>
                                 <option>Integral</option>
                             </select>
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label">Turma</label>
-                            <select class="form-select">
+                            <label class="form-label text-body-secondary">Turma</label>
+                            <select class="form-select bg-body-secondary text-body">
                                 <option>Turma A</option>
                                 <option>Turma B</option>
                                 <option>Turma C</option>
@@ -478,153 +485,136 @@
                             </select>
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label">Aulas Previstas</label>
-                            <input type="number" class="form-control" value="20" readonly>
+                            <label class="form-label text-body-secondary">Aulas Previstas</label>
+                            <input type="number" class="form-control bg-body-secondary text-body" value="20" readonly>
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label">Aulas Dadas</label>
-                            <input type="number" class="form-control" value="19" readonly>
+                            <label class="form-label text-body-secondary">Aulas Dadas</label>
+                            <input type="number" class="form-control bg-body-secondary text-body" value="19" readonly>
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-3">
-                            <label class="form-label">Professor</label>
-                            <select class="form-select">
+                            <label class="form-label text-body-secondary">Professor</label>
+                            <select class="form-select bg-body-secondary text-body">
                                 <option>José da Silva</option>
                                 <option>Maria José</option>
                             </select>
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label">Disciplina</label>
-                            <select class="form-select">
+                            <label class="form-label text-body-secondary">Disciplina</label>
+                            <select class="form-select bg-body-secondary text-body">
                                 <option>Língua Portuguesa</option>
                                 <option>Matemática</option>
                             </select>
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label">Pedagogo</label>
-                            <select class="form-select">
+                            <label class="form-label text-body-secondary">Pedagogo</label>
+                            <select class="form-select bg-body-secondary text-body">
                                 <option>Antônio</option>
                                 <option>Carlos</option>
                             </select>
                         </div>
-                        <div class="col-md-3 d-flex align-items-center gap-2"> <!-- flex container -->
-                            <button type="button" class="btn btn-primary btn-sm">
+                        <div class="col-md-3 d-flex align-items-center gap-2 mt-3 mt-md-0">
+                            <button type="button" class="btn btn-primary btn-sm w-100">
                                 Exportar frequência – XLSX
                             </button>
-                            <button type="button" class="btn btn-primary btn-sm">
+                            <button type="button" class="btn btn-primary btn-sm w-100">
                                 Exportar frequência – PDF
                             </button>
                         </div>
                     </div>
                 </div>
-
-                <!-- Container da frequência -->
-                <div class="frequencia-container border bg-white rounded-3 shadow-sm mb-4">
-                    <div class="frequencia-header bg-white">
-                        <h5 class="fw-bold mb-0">Frequência - Julho</h5>
-                        <select class="form-select w-auto">
-                            <option selected>Julho</option>
-                            <option>Agosto</option>
-                            <option>Setembro</option>
-                            <option>Outubro</option>
-                        </select>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-sm mb-0">
-                            <thead class="table-light">
-                                <tr>
-                                    <th>ALUNO</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">01/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">02/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">03/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">04/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">05/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">08/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">09/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">10/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">11/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">12/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">15/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">16/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">17/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">18/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">19/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">22/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">23/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">24/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">25/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">26/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">29/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">30/07</th>
-                                    <th data-bs-toggle="modal" data-bs-target="#modalDia">31/07</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <script>
-                                    const tbody = document.currentScript.parentElement;
-                                    const dias = ["01", "02", "03", "04", "05", "08", "09", "10", "11", "12",
-                                        "15", "16", "17", "18", "19", "22", "23", "24", "25", "26",
-                                        "29", "30", "31"];
-                                    const alunos = ["Ana Clara dos Santos", "Beatriz Oliveira Silva", "Carlos Eduardo Lima", "Daniel Henrique Alves", "Eduarda Martins Costa",
-                                        "Fernanda Souza Pereira", "Gabriel Rodrigues Lima", "Heloísa Andrade Ribeiro", "Igor Farias Santos", "João Pedro Batista",
-                                        "Karen Cristina Lopes", "Larissa Mendonça Lima", "Lucas Emanuel Costa", "Mariana de Freitas", "Matheus da Silva Rocha",
-                                        "Nicole Carvalho Teixeira", "Otávio Menezes Souza", "Paulo Victor Cardoso", "Rafaela Dias Oliveira", "Renan Augusto Silva",
-                                        "Sabrina Monteiro Luz", "Thiago Almeida Barros", "Valentina Ribeiro Cruz", "Vinícius Barbosa Nunes", "Yasmin Ferreira Duarte"
-                                    ];
-
-                                    alunos.forEach(nome => {
-                                        const row = document.createElement("tr");
-                                        row.innerHTML =
-                                            `<td>${nome}</td>` +
-                                            dias.map(() => '<td class="frequencia-presente">P</td>').join("");
-                                        tbody.appendChild(row);
-                                    });
-                                </script>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
 
-            <!-- Modal para dia -->
-            <div class="modal fade" id="modalDia" tabindex="-1" aria-labelledby="modalDiaLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalDiaLabel">Informações do Dia</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Fechar"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label">Conteúdo Previsto</label>
-                                <textarea class="form-control"></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Conteúdo Dado</label>
-                                <textarea class="form-control"></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Descritor Abordado</label>
-                                <textarea class="form-control"></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Tarefa do Mapa de Ação</label>
-                                <select class="form-select">
-                                    <option>Tarefa 1</option>
-                                    <option>Tarefa 2</option>
-                                    <option>Tarefa 3</option>
-                                    <option>Tarefa 4</option>
-                                    <option>Tarefa 5</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                            <button type="button" class="btn btn-primary">Salvar</button>
-                        </div>
-                    </div>
+            <!-- Container da frequência -->
+            <div class="frequencia-container border bg-body rounded-3 shadow-sm mb-4">
+                <div
+                    class="frequencia-header bg-body-secondary border-bottom d-flex justify-content-between align-items-center p-3">
+                    <h5 class="fw-bold mb-0 text-body-emphasis">Frequência - Julho</h5>
+                    <select class="form-select w-auto">
+                        <option selected>Julho</option>
+                        <option>Agosto</option>
+                        <option>Setembro</option>
+                        <option>Outubro</option>
+                    </select>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-sm mb-0 align-middle">
+                        <thead class="table-group-divider">
+                            <tr class="bg-body-tertiary">
+                                <th class="text-body-emphasis">ALUNO</th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">01/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">02/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">03/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">04/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">05/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">08/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">09/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">10/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">11/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">12/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">15/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">16/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">17/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">18/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">19/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">22/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">23/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">24/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">25/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">26/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">29/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">30/07
+                                </th>
+                                <th class="text-body-emphasis" data-bs-toggle="modal" data-bs-target="#modalDia">31/07
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <script>
+                                const tbody = document.currentScript.parentElement;
+                                const dias = ["01", "02", "03", "04", "05", "08", "09", "10", "11", "12",
+                                    "15", "16", "17", "18", "19", "22", "23", "24", "25", "26",
+                                    "29", "30", "31"];
+                                const alunos = ["Ana Clara dos Santos", "Beatriz Oliveira Silva", "Carlos Eduardo Lima", "Daniel Henrique Alves", "Eduarda Martins Costa",
+                                    "Fernanda Souza Pereira", "Gabriel Rodrigues Lima", "Heloísa Andrade Ribeiro", "Igor Farias Santos", "João Pedro Batista",
+                                    "Karen Cristina Lopes", "Larissa Mendonça Lima", "Lucas Emanuel Costa", "Mariana de Freitas", "Matheus da Silva Rocha",
+                                    "Nicole Carvalho Teixeira", "Otávio Menezes Souza", "Paulo Victor Cardoso", "Rafaela Dias Oliveira", "Renan Augusto Silva",
+                                    "Sabrina Monteiro Luz", "Thiago Almeida Barros", "Valentina Ribeiro Cruz", "Vinícius Barbosa Nunes", "Yasmin Ferreira Duarte"
+                                ];
+
+                                alunos.forEach(nome => {
+                                    const row = document.createElement("tr");
+                                    row.innerHTML =
+                                        `<td class="text-body">${nome}</td>` +
+                                        dias.map(() => '<td class="frequencia-presente text-body">P</td>').join("");
+                                    tbody.appendChild(row);
+                                });
+                            </script>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -696,12 +686,6 @@
                     }
                 });
             </script>
-
-
-
-
-
-
 
             <!-- Fim do Conteúdo - -->
         </div>

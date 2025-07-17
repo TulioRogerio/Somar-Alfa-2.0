@@ -280,7 +280,7 @@
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="#">Sair do Sistema</a></li>
+                    <li><a class="dropdown-item" href="./login.html">Sair do Sistema</a></li>
                 </ul>
             </div>
         </div>
@@ -307,7 +307,7 @@
                                 <span class="badge bg-secondary">tprogerio@sedu.es.gov.br</span>
                             </div>
                             <div class="mb-2">
-                                <strong>Função:</strong> TCGP<br>
+                                <strong>Função 1:</strong> TCGP<br>
                                 <strong>Escolas Monitoradas:</strong>
                                 <ul class="list-unstyled mb-0 small mt-1">
                                     <li>EEEFM Sonho Lindo</li>
@@ -315,6 +315,14 @@
                                     <li>EEEFM Bolinho de Chuva</li>
                                 </ul>
                             </div>
+                            <p></p>
+                            <div class="mb-2">
+                                <strong>Função 2:</strong> Diretor<br>
+                                <strong>Escolas Monitoradas:</strong>
+                                <ul class="list-unstyled mb-0 small mt-1">
+                                    <li>EEEFM Sonho Lindo</li>
+                                </ul>
+                            </div>                            
                         </div>
                     </div>
                 </div>
@@ -328,6 +336,7 @@
                         <div class="card-body ">
                             <form>
                                 <div class="row mb-3 border rounded-3 p-3 ">
+                                    <h5>Dados Pessoais</h5>
                                     <div class="col-md-3">
                                         <label class="form-label">ID</label>
                                         <input type="text" class="form-control" value="78.0001" readonly>
@@ -376,8 +385,9 @@
                                 </div>
                                 <div class="row mb-3 border rounded-3 p-3">
                                     <div class="row mb-3">
+                                        <h5>Funções</h5>
                                         <div class="col-md-4">
-                                            <label class="form-label">Função</label>
+                                            <label class="form-label">Função 1</label>
                                             <select class="form-select">
                                                 <option selected>TCGP</option>
                                                 <option>Diretor</option>
@@ -407,10 +417,42 @@
                                                 <!-- Outras funções -->
                                             </select>
                                         </div>
-
+                                        <p></p>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Função 2</label>
+                                            <select class="form-select">
+                                                <option selected>Diretor</option>
+                                                <option>Diretor</option>
+                                                <option>Coordenador Municipal</option>
+                                                <option>Coordenador Regional</option>
+                                                <option>Supervisor</option>
+                                                <!-- Outras funções -->
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">SRE</label>
+                                            <select class="form-select">
+                                                <option selected>SRE Cariacica</option>
+                                                <option>SRE Carapina</option>
+                                                <option>SRE Cariacica</option>
+                                                <option>SRE Vila Velha</option>
+                                                <!-- Outras funções -->
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Município</label>
+                                            <select class="form-select">
+                                                <option selected>Cariacica</option>
+                                                <option>Viana</option>
+                                                <option>Santa Leopoldina</option>
+                                                <option>Marechal Floriano</option>
+                                                <!-- Outras funções -->
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="mt-4 text-end">
+                                    <button type="submit" class="btn btn-warning">Alterar senha</button>
                                     <button type="submit" class="btn btn-primary">Salvar Alterações</button>
                                     <button type="reset" class="btn btn-light ms-2">Cancelar</button>
                                 </div>
