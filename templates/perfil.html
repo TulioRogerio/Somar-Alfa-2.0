@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Túlio Permino Rogério" />
+    <meta name="theme-color" content="#712cf9">
     <title>Somar Alfa 2 - Início</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
     <script src="assets/js/color-modes.js"></script>
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <meta name="theme-color" content="#712cf9">
     <link href="assets/dist/css/sidebars.css" rel="stylesheet">
+
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -322,7 +322,7 @@
                                 <ul class="list-unstyled mb-0 small mt-1">
                                     <li>EEEFM Sonho Lindo</li>
                                 </ul>
-                            </div>                            
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -452,7 +452,8 @@
                                     </div>
                                 </div>
                                 <div class="mt-4 text-end">
-                                    <button type="submit" class="btn btn-warning">Alterar senha</button>
+                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                                        data-bs-target="#alterarSenhaModal">Alterar senha</button>
                                     <button type="submit" class="btn btn-primary">Salvar Alterações</button>
                                     <button type="reset" class="btn btn-light ms-2">Cancelar</button>
                                 </div>
@@ -461,6 +462,53 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Modal de Alteração de Senha -->
+            <div class="modal fade" id="alterarSenhaModal" tabindex="-1" aria-labelledby="alterarSenhaLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form id="form-alterar-senha" autocomplete="off">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="alterarSenhaLabel">
+                                    Alterar Senha
+                                </h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Fechar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="senhaAntiga" class="form-label">Senha atual</label>
+                                    <input type="password" class="form-control" id="senhaAntiga" name="senhaAntiga"
+                                        required autocomplete="current-password">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="senhaNova" class="form-label">Nova senha</label>
+                                    <input type="password" class="form-control" id="senhaNova" name="senhaNova" required
+                                        autocomplete="new-password">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirmarSenhaNova" class="form-label">Confirme a nova senha</label>
+                                    <input type="password" class="form-control" id="confirmarSenhaNova"
+                                        name="confirmarSenhaNova" required autocomplete="new-password">
+                                </div>
+                                <div id="mensagemAlteracaoSenha" class="form-text text-danger d-none">
+                                    <!-- Mensagem de erro ou validação será exibida aqui -->
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                    Cancelar
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    Alterar senha
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
             <!-- Fim do Conteúdo - -->
         </div>
         <script src="assets/dist/js/bootstrap.bundle.min.js" class="astro-vvvwv3sm"></script>
