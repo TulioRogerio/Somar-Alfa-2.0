@@ -13,27 +13,28 @@
     <meta name="theme-color" content="#712cf9">
     <link href="assets/dist/css/sidebars.css" rel="stylesheet">
     <style>
-body[data-bs-theme="dark"] thead.table-light {
-  background-color: #181b1f !important; /* bem mais escuro */
-  color: #f8f9fa !important;
-  border-color: #333 !important;
-  /* Para reforçar o contraste da fonte */
-  font-weight: bold;
-  letter-spacing: 0.5px;
-}
+        body[data-bs-theme="dark"] thead.table-light {
+            background-color: #181b1f !important;
+            /* bem mais escuro */
+            color: #f8f9fa !important;
+            border-color: #333 !important;
+            /* Para reforçar o contraste da fonte */
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
 
-body[data-bs-theme="dark"] .table-bordered > :not(caption) > * > * {
-  border-color: #333 !important;
-}
+        body[data-bs-theme="dark"] .table-bordered> :not(caption)>*>* {
+            border-color: #333 !important;
+        }
 
-body[data-bs-theme="dark"] .table {
-  --bs-table-bg: #23272b;
-  --bs-table-striped-bg: #22242a;
-  --bs-table-hover-bg: #181b1f;
-  color: #f8f9fa;
-}
+        body[data-bs-theme="dark"] .table {
+            --bs-table-bg: #23272b;
+            --bs-table-striped-bg: #22242a;
+            --bs-table-hover-bg: #181b1f;
+            color: #f8f9fa;
+        }
 
-.card {
+        .card {
             background-color: var(--bs-card-bg, #f8f9fa) !important;
             color: var(--bs-body-color, #212529) !important;
             border: 1px solid var(--bs-border-color, #dee2e6) !important;
@@ -364,6 +365,14 @@ body[data-bs-theme="dark"] .table {
                                         data-bs-toggle="modal" data-bs-target="#editarMapa1">
                                         Editar
                                     </button>
+                                    <button type="button" class="badge rounded-pill text-bg-warning"
+                                        data-bs-toggle="offcanvas" data-bs-target="#offcanvasmapa"
+                                        aria-controls="offcanvasRight">Microteste de
+                                        Consistência</button>
+                                    <span class="badge rounded-pill text-bg-success">Mapa de ação com consistência 4.73 de 5.00</span>
+                                    <span class="badge rounded-pill text-bg-warning">Mapa de ação com consistência 3.73 de 5.00</span>
+                                    <span class="badge rounded-pill text-bg-danger">Mapa de ação com consistência 1.73 de 5.00</span>                                                                        
+
                                     <!-- Modal Edição Mapa 1 -->
                                     <div class="modal fade" id="editarMapa1" data-bs-backdrop="static"
                                         data-bs-keyboard="false" tabindex="-1" aria-labelledby="editarMapa1Label"
@@ -393,6 +402,181 @@ body[data-bs-theme="dark"] .table {
                                             </div>
                                         </div>
                                     </div>
+
+                                    <!-- Offcanvas do mapa de ação -->
+                                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasmapa"
+                                        aria-labelledby="offcanvasRightLabel">
+                                        <div class="offcanvas-header">
+                                            <h5 class="offcanvas-title" id="offcanvasRightLabel">Micro Teste de
+                                                Consistência</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="offcanvas-body">
+
+                                            <div class="card my-4 shadow-sm">
+                                                <div class="card-header bg-primary text-white fw-bold">
+                                                    Micro Teste de Consistência do Mapa de Ação
+                                                </div>
+                                                <div class="card-body">
+                                                    <form id="testeConsistencia">
+                                                        <!-- Questão 1 -->
+                                                        <div class="mb-3">
+                                                            <label class="fw-bold">1. Clareza e Objetividade</label>
+                                                            <small class="form-text text-muted">
+                                                                A redação do mapa é clara, específica e evidencia o
+                                                                problema escolar a ser resolvido.
+                                                            </small>
+                                                            <select class="form-select" name="clareza" required>
+                                                                <option value="">Selecione</option>
+                                                                <option value="1">1 - Frágil</option>
+                                                                <option value="2">2 - Parcialmente Frágil</option>
+                                                                <option value="3">3 - Parcialmente Aplicável</option>
+                                                                <option value="4">4 - Aplicável</option>
+                                                                <option value="5">5 - Totalmente Aplicável</option>
+                                                            </select>
+                                                        </div>
+                                                        <!-- Questão 2 -->
+                                                        <div class="mb-3">
+                                                            <label class="fw-bold">2. Coerência e Alinhamento com o
+                                                                Diagnóstico</label>
+                                                            <small class="form-text text-muted">
+                                                                As ações, metas e indicadores estão alinhados ao
+                                                                diagnóstico e às metas do IDEB/IDEBES.
+                                                            </small>
+                                                            <select class="form-select" name="coerencia" required>
+                                                                <option value="">Selecione</option>
+                                                                <option value="1">1 - Frágil</option>
+                                                                <option value="2">2 - Parcialmente Frágil</option>
+                                                                <option value="3">3 - Parcialmente Aplicável</option>
+                                                                <option value="4">4 - Aplicável</option>
+                                                                <option value="5">5 - Totalmente Aplicável</option>
+                                                            </select>
+                                                        </div>
+                                                        <!-- Questão 3 -->
+                                                        <div class="mb-3">
+                                                            <label class="fw-bold">3. Exequibilidade</label>
+                                                            <small class="form-text text-muted">
+                                                                As ações são realistas em tempo, recursos e
+                                                                responsabilidades.
+                                                            </small>
+                                                            <select class="form-select" name="exequibilidade" required>
+                                                                <option value="">Selecione</option>
+                                                                <option value="1">1 - Frágil</option>
+                                                                <option value="2">2 - Parcialmente Frágil</option>
+                                                                <option value="3">3 - Parcialmente Aplicável</option>
+                                                                <option value="4">4 - Aplicável</option>
+                                                                <option value="5">5 - Totalmente Aplicável</option>
+                                                            </select>
+                                                        </div>
+                                                        <!-- Questão 4 -->
+                                                        <div class="mb-3">
+                                                            <label class="fw-bold">4. Mensurabilidade e
+                                                                Indicadores</label>
+                                                            <small class="form-text text-muted">
+                                                                Existem metas e indicadores claros para acompanhamento e
+                                                                avaliação das ações.
+                                                            </small>
+                                                            <select class="form-select" name="mensurabilidade" required>
+                                                                <option value="">Selecione</option>
+                                                                <option value="1">1 - Frágil</option>
+                                                                <option value="2">2 - Parcialmente Frágil</option>
+                                                                <option value="3">3 - Parcialmente Aplicável</option>
+                                                                <option value="4">4 - Aplicável</option>
+                                                                <option value="5">5 - Totalmente Aplicável</option>
+                                                            </select>
+                                                        </div>
+                                                        <!-- Questão 5 -->
+                                                        <div class="mb-3">
+                                                            <label class="fw-bold">5. Participação e
+                                                                Corresponsabilidade</label>
+                                                            <small class="form-text text-muted">
+                                                                O mapa foi construído com a participação da equipe
+                                                                gestora, professores e/ou comunidade escolar.
+                                                            </small>
+                                                            <select class="form-select" name="participacao" required>
+                                                                <option value="">Selecione</option>
+                                                                <option value="1">1 - Frágil</option>
+                                                                <option value="2">2 - Parcialmente Frágil</option>
+                                                                <option value="3">3 - Parcialmente Aplicável</option>
+                                                                <option value="4">4 - Aplicável</option>
+                                                                <option value="5">5 - Totalmente Aplicável</option>
+                                                            </select>
+                                                        </div>
+                                                        <!-- Questão 6 -->
+                                                        <div class="mb-3">
+                                                            <label class="fw-bold">6. Flexibilidade e
+                                                                Monitoramento</label>
+                                                            <small class="form-text text-muted">
+                                                                O mapa prevê revisão, ajustes e aprendizagem ao longo da
+                                                                execução.
+                                                            </small>
+                                                            <select class="form-select" name="flexibilidade" required>
+                                                                <option value="">Selecione</option>
+                                                                <option value="1">1 - Frágil</option>
+                                                                <option value="2">2 - Parcialmente Frágil</option>
+                                                                <option value="3">3 - Parcialmente Aplicável</option>
+                                                                <option value="4">4 - Aplicável</option>
+                                                                <option value="5">5 - Totalmente Aplicável</option>
+                                                            </select>
+                                                        </div>
+                                                        <!-- Comentário opcional -->
+                                                        <div class="mb-3">
+                                                            <label class="fw-bold">Sugestão de melhoria
+                                                                (opcional)</label>
+                                                            <textarea class="form-control" name="comentario"
+                                                                rows="2"></textarea>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-success">Salvar
+                                                            Avaliação</button>
+                                                    </form>
+                                                    <!-- Área de feedback -->
+                                                    <div id="feedbackConsistencia" class="mt-4" style="display:none;">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <script>
+                                                document.getElementById('testeConsistencia').onsubmit = function (e) {
+                                                    e.preventDefault();
+                                                    // Pega todos os valores
+                                                    const campos = ['clareza', 'coerencia', 'exequibilidade', 'mensurabilidade', 'participacao', 'flexibilidade'];
+                                                    let soma = 0, vazio = false;
+                                                    campos.forEach(campo => {
+                                                        let val = parseInt(document.querySelector(`[name="${campo}"]`).value);
+                                                        if (isNaN(val)) vazio = true;
+                                                        else soma += val;
+                                                    });
+                                                    if (vazio) {
+                                                        alert('Responda todas as questões.');
+                                                        return;
+                                                    }
+                                                    let media = soma / campos.length;
+                                                    let feedback = '';
+                                                    let cor = '';
+                                                    if (media >= 4.5) {
+                                                        feedback = 'Parabéns! O mapa de ação está consistente e bem estruturado.';
+                                                        cor = 'success';
+                                                    } else if (media >= 3) {
+                                                        feedback = 'O mapa de ação está adequado, mas pode ser melhorado nos itens destacados.';
+                                                        cor = 'warning';
+                                                    } else {
+                                                        feedback = 'Atenção! Recomenda-se revisão nos itens com menor pontuação para garantir efetividade e alinhamento.';
+                                                        cor = 'danger';
+                                                    }
+                                                    document.getElementById('feedbackConsistencia').style.display = '';
+                                                    document.getElementById('feedbackConsistencia').innerHTML =
+                                                        `<div class="alert alert-${cor} fw-bold">
+      Nota média: ${media.toFixed(2)} <br> ${feedback}
+    </div>`;
+                                                };
+                                            </script>
+
+
+
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
